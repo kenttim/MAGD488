@@ -131,5 +131,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 3046940594573238909}
-  player: {fileID: 0}
+  player: {fileID: 8367666351902649740, guid: fa5281fd9af09de4cadca230ff283512, type: 3}
   frequency: 0

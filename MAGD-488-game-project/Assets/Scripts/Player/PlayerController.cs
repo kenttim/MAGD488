@@ -24,4 +24,13 @@ public class PlayerController : MonoBehaviour {
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Buff")) 
+        {
+            Destroy(other.gameObject);
+            Debug.Log("Buff gained");
+        } 
+    }
 }
