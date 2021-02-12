@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Scenes/Dak_Playground/PlayerControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Dak_Playground/PlayerControls.inputactions'
 
 using System;
 using System.Collections;
@@ -61,7 +61,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": ""down"",
                     ""id"": ""070c5b23-f0cf-4653-b91d-99a150252a0d"",
-                    ""path"": ""<Keyboard>/d"",
+                    ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
