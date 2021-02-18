@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Dak_Playground/PlayerControls.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Dak_Playground/Scripts/PlayerControls.inputactions'
 
 using System;
 using System.Collections;
