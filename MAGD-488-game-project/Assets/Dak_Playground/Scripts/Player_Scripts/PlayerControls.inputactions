@@ -101,6 +101,33 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Player Actions",
+            "id": "5a8b802c-66ec-4df1-9bc4-ae395e71e9b1",
+            "actions": [
+                {
+                    "name": "Roll",
+                    "type": "Button",
+                    "id": "182e9a33-290e-4af6-a95a-90edddf757f6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a0349505-22cc-4ff4-ab1d-3050aea9340e",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
