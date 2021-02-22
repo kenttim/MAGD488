@@ -5,6 +5,8 @@ using UnityEngine;
 public class AnimatorHandler : MonoBehaviour
 {
     public Animator anim;
+    public InputHandler inputHandler; //dodge stuff
+    public PlayerLocomotion playerLocomotion;  //dodge stuff
     int vertical;
     int horizontal;
     public bool canRotate;
@@ -12,6 +14,8 @@ public class AnimatorHandler : MonoBehaviour
     public void Initialize()
     {
         anim = GetComponent<Animator>();
+        inputHandler = GetComponentInParent<InputHandler>(); //dodge stuff
+        playerLocomotion = GetComponentInParent<PlayerLocomotion>(); //dodge stuff
         vertical = Animator.StringToHash("Vertical");
         horizontal = Animator.StringToHash("Horizontal");
     }
@@ -71,6 +75,13 @@ public class AnimatorHandler : MonoBehaviour
         anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
     }
 
+    public void PlayTargetAnimation(string targetAnim, bool isInteracting)  //dodge stuff
+    {
+        anim.applyRootMotion = isInteracting;
+        anim.SetBool("isInteracting", isInteracting);
+        anim.CrossFade(targetAnim, 0.2f);
+    }
+
     public void CanRotate()
     {
         canRotate = true;
@@ -79,5 +90,20 @@ public class AnimatorHandler : MonoBehaviour
     public void StopRotation()
     {
         canRotate = false;
+    }
+
+    public void OnAnimatorMove()  //dodge stuff
+    {
+        if(inputHandler.isInteracting == false)
+        {
+            return;
+        }
+
+        float delta = Time.deltaTime;
+        playerLocomotion.rigidbody.drag = 0;
+        Vector3 deltaPosition = anim.deltaPosition;
+        deltaPosition.y = 0;
+        Vector3 velocity = deltaPosition / delta;
+        playerLocomotion.rigidbody.velocity = velocity;
     }
 }
