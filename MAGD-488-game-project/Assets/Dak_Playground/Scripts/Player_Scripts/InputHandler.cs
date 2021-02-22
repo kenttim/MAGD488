@@ -15,6 +15,9 @@ public class InputHandler : MonoBehaviour
     public bool rollFlag; //dodge stuff
     public bool isInteracting; //dodge stuff
 
+    public float rollInputTimer; //sprinting stuff
+    public bool sprintFlag; //sprinting stuff
+
     PlayerControls inputActions;
     CameraHandler cameraHandler;
 
@@ -74,8 +77,17 @@ public class InputHandler : MonoBehaviour
         b_input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
         if (b_input)
         {
-            print("roll");
-            rollFlag = true;
+            rollInputTimer += delta;
+            sprintFlag = true;
+        }
+        else
+        {
+            if(rollInputTimer > 0 && rollInputTimer < 0.5f)
+            {
+                sprintFlag = false;
+                rollFlag = true;
+            }
+            rollInputTimer = 0;
         }
     }
 }
