@@ -50,7 +50,7 @@ public class PlayerLocomotion : MonoBehaviour
         animatorHandler.Initialize();
 
         playerManager.isGrounded = true; // fall stuff
-        ignoreForGroundCheck = ~(1 << 8 | 1 << 11);
+        ignoreForGroundCheck = ~(1 << 9 | 1 << 11);
 
     }
 
@@ -174,7 +174,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (playerManager.isInAir)
         {
-            rigidbody.AddForce(-Vector3.up * fallSpeed);
+            rigidbody.AddForce(-Vector3.up * fallSpeed * (Mathf.Pow(3, 1.7f)));
             rigidbody.AddForce(moveDirection * fallSpeed / 5f);
         }
 
@@ -197,7 +197,7 @@ public class PlayerLocomotion : MonoBehaviour
                 if (inAirTimer > 0.5f)
                 {
                     Debug.Log("you were in the air for " + inAirTimer); // fall stuff debug script
-                    animatorHandler.PlayTargetAnimation("Empty", true);//probably problem
+                    animatorHandler.PlayTargetAnimation("Landing", true);//probably problem
                     inAirTimer = 0;
                 }
                 else
@@ -218,7 +218,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 if (inputHandler.isInteracting == false)
                 {
-                    animatorHandler.PlayTargetAnimation("Empty", true); //probably problem
+                    animatorHandler.PlayTargetAnimation("Falling", true); //probably problem
                 }
 
                 Vector3 vel = rigidbody.velocity;
@@ -241,4 +241,6 @@ public class PlayerLocomotion : MonoBehaviour
         }
 
     }
+  
 }
+
