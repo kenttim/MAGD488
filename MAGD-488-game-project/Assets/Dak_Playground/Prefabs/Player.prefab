@@ -1796,6 +1796,8 @@ MonoBehaviour:
   b_input: 0
   rollFlag: 0
   isInteracting: 0
+  rollInputTimer: 0
+  sprintFlag: 0
 --- !u!114 &8308309236601920986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1813,7 +1815,9 @@ MonoBehaviour:
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
   movementSpeed: 25
+  sprintSpeed: 7
   rotationSpeed: 10
+  isSprinting: 0
 --- !u!114 &5045736683252226611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3284,6 +3288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  inputHandler: {fileID: 0}
+  playerLocomotion: {fileID: 0}
   canRotate: 1
 --- !u!1 &8308309237310395874
 GameObject:
