@@ -86,12 +86,12 @@ public class PlayerLocomotion : MonoBehaviour
         {
             return;
         }
-        /*
+        
         if (inputHandler.isInteracting) // fall stuff
         {
             return;
         }
-        */
+        
         moveDirection = cameraObject.forward * inputHandler.vertical;
         moveDirection += cameraObject.right * inputHandler.horizontal;
         moveDirection.Normalize();
