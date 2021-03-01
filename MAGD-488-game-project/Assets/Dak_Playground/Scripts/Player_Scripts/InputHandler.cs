@@ -15,6 +15,7 @@ public class InputHandler : MonoBehaviour
     public bool rollFlag; //dodge stuff
     public bool isInteracting; //dodge stuff
 
+
     public float rollInputTimer; //sprinting stuff
     public bool sprintFlag; //sprinting stuff
 
