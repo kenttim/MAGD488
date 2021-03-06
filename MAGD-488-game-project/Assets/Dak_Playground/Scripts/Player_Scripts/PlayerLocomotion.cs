@@ -99,7 +99,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         float speed = movementSpeed;
 
-        if (inputHandler.sprintFlag) //sprinting stuff
+        if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5) //sprinting stuff
         {
             speed = sprintSpeed;
             isSprinting = true;
@@ -107,6 +107,7 @@ public class PlayerLocomotion : MonoBehaviour
         } else
         {
             moveDirection *= speed;
+            isSprinting = false;
         } //sprinting stuff
 
 
@@ -175,7 +176,7 @@ public class PlayerLocomotion : MonoBehaviour
         if (playerManager.isInAir)
         {
             rigidbody.AddForce(-Vector3.up * fallSpeed * (Mathf.Pow(3, 1.7f)));
-            rigidbody.AddForce(moveDirection * fallSpeed / 5f);
+            rigidbody.AddForce(moveDirection * fallSpeed / 5f); //supposed to add force to prevent getting suck on ledge, but if ledge it spiral it's pushing you into the wall basically
         }
 
         Vector3 dir = moveDirection;
