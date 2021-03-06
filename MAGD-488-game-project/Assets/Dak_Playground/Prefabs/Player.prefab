@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1157305089645132412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1539248755751773199}
+  m_Layer: 0
+  m_Name: Left Hand Override
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1539248755751773199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157305089645132412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8308309236263180925}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8308309235608889415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,6 +1061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8308309236263180925}
   - component: {fileID: 8308309236263180926}
+  - component: {fileID: 7109761122027247103}
   m_Layer: 0
   m_Name: Left_Hand
   m_TagString: Untagged
@@ -1048,7 +1079,8 @@ Transform:
   m_LocalRotation: {x: 0.000000021855694, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 9.313226e-10, y: -0.0020089538, z: -0.0020089538}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1539248755751773199}
   m_Father: {fileID: 8308309237276779071}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1108,6 +1140,21 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.19477865, y: 0.0001129508, z: 0.90771675}
     m_Extent: {x: 0.056383707, y: 0.13599724, z: 0.146536}
   m_DirtyAABB: 0
+--- !u!114 &7109761122027247103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308309236263180924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f5ddc8338fdfc458946d594b554b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 1539248755751773199}
+  isLeftHandSlot: 1
+  currentWeaponModel: {fileID: 0}
 --- !u!1 &8308309236270558223
 GameObject:
   m_ObjectHideFlags: 0
@@ -1754,6 +1801,7 @@ GameObject:
   - component: {fileID: 8308309236601920985}
   - component: {fileID: 8308309236601920984}
   - component: {fileID: 8684676210637093244}
+  - component: {fileID: 3522901844911308501}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -1810,13 +1858,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd649aa350022044abe221fb0fd07d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0, z: 0}
   myTransform: {fileID: 0}
   animatorHandler: {fileID: 0}
   rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
+  groundDetectionRayStartPoint: 0.5
+  minimumDistanceNeededToFall: 1
+  groundDirectionRayDistance: 0.2
+  inAirTimer: 0
   movementSpeed: 25
   sprintSpeed: 7
   rotationSpeed: 10
+  fallSpeed: 45
   isSprinting: 0
 --- !u!114 &5045736683252226611
 MonoBehaviour:
@@ -1877,6 +1931,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b53399c9f569d499144e6dfcf13fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInAir: 0
+  isGrounded: 0
+--- !u!114 &3522901844911308501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308309236601920991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1775597476da0b24e82bf5f6f831163a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftWeapon: {fileID: 11400000, guid: a46f5a8eb694f214188da549e98311e9, type: 2}
 --- !u!1 &8308309236603880111
 GameObject:
   m_ObjectHideFlags: 0

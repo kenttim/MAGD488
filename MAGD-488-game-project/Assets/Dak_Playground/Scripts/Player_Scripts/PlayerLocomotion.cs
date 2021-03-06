@@ -195,10 +195,10 @@ public class PlayerLocomotion : MonoBehaviour
 
             if (playerManager.isInAir)
             {
-                if (inAirTimer > 0.5f)
+                if (inAirTimer > 0.75f)
                 {
                     Debug.Log("you were in the air for " + inAirTimer); // fall stuff debug script
-                    animatorHandler.PlayTargetAnimation("Landing", true);//probably problem
+                    animatorHandler.PlayTargetAnimation("Landing", true);
                     inAirTimer = 0;
                 }
                 else
