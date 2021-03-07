@@ -7,7 +7,7 @@ public class WeaponHolderSlot : MonoBehaviour
 {
     public Transform parentOverride;
     public bool isLeftHandSlot;
-
+    public bool isRightHandSlot;
     public GameObject currentWeaponModel;
 
     public void UnloadWeapon()

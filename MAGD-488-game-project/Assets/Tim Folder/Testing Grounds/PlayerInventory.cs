@@ -7,6 +7,7 @@ public class PlayerInventory : MonoBehaviour
     WeaponSlotManager slotManager;
 
     public WeaponItem leftWeapon;
+    public WeaponItem rightWeapon;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
+        slotManager.LoadWeaponOnSlot(rightWeapon, false);
         slotManager.LoadWeaponOnSlot(leftWeapon, true);
     }
 }

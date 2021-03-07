@@ -5,12 +5,21 @@ using UnityEngine;
 public class WeaponSlotManager : MonoBehaviour
 {
     WeaponHolderSlot leftHandSlot;
+    WeaponHolderSlot rightHandSlot;
 
     private void Awake()
     {
-        WeaponHolderSlot weaponHolderSlot = GetComponentInChildren<WeaponHolderSlot>();
-        if(weaponHolderSlot.isLeftHandSlot){
-            leftHandSlot = weaponHolderSlot;
+        WeaponHolderSlot[] weaponHolderSlots = GetComponentsInChildren<WeaponHolderSlot>();
+        foreach(WeaponHolderSlot weaponSlot in weaponHolderSlots)
+        {
+            if (weaponSlot.isLeftHandSlot)
+            {
+                leftHandSlot = weaponSlot;
+            }
+            else if (weaponSlot.isRightHandSlot) 
+            {
+                rightHandSlot = weaponSlot;
+            }
         }
     }
 
@@ -19,6 +28,9 @@ public class WeaponSlotManager : MonoBehaviour
         if (isLeft)
         {
             leftHandSlot.LoadWeaponModel(weaponItem);
+        } 
+        else {
+            rightHandSlot.LoadWeaponModel(weaponItem);
         }
     }
 }
