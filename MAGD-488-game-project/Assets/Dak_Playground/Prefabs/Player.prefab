@@ -1797,11 +1797,12 @@ GameObject:
   - component: {fileID: 8308309237301672821}
   - component: {fileID: 8308309236601920987}
   - component: {fileID: 8308309236601920986}
-  - component: {fileID: 5045736683252226611}
   - component: {fileID: 8308309236601920985}
   - component: {fileID: 8308309236601920984}
-  - component: {fileID: 8684676210637093244}
   - component: {fileID: 3522901844911308501}
+  - component: {fileID: 2946879846723708459}
+  - component: {fileID: 8036378540901209058}
+  - component: {fileID: 2187680392095199475}
   m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
@@ -1844,6 +1845,9 @@ MonoBehaviour:
   b_input: 0
   rollFlag: 0
   isInteracting: 0
+  left_click: 0
+  right_click: 0
+  jump_input: 0
   rollInputTimer: 0
   sprintFlag: 0
 --- !u!114 &8308309236601920986
@@ -1872,23 +1876,6 @@ MonoBehaviour:
   rotationSpeed: 10
   fallSpeed: 45
   isSprinting: 0
---- !u!114 &5045736683252226611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8308309236601920991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1237d2bb63f065e4fa002a7fbe622e37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  damage:
-    baseValue: 0
-  armor:
-    baseValue: 0
 --- !u!54 &8308309236601920985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1919,20 +1906,6 @@ CapsuleCollider:
   m_Height: 18
   m_Direction: 1
   m_Center: {x: 0, y: 9, z: 0}
---- !u!114 &8684676210637093244
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8308309236601920991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39b53399c9f569d499144e6dfcf13fc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInAir: 0
-  isGrounded: 0
 --- !u!114 &3522901844911308501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1946,6 +1919,48 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftWeapon: {fileID: 11400000, guid: a46f5a8eb694f214188da549e98311e9, type: 2}
+--- !u!114 &2946879846723708459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308309236601920991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39b53399c9f569d499144e6dfcf13fc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInAir: 0
+  isGrounded: 0
+--- !u!114 &8036378540901209058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308309236601920991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98aabefd7ccc4e4cae3c00f2e3ce0b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthLevel: 10
+  maxHealth: 0
+  currentHealth: 0
+  healthbar: {fileID: 0}
+--- !u!114 &2187680392095199475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308309236601920991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621a00375a58b21449cfd0f146edfa70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8308309236603880111
 GameObject:
   m_ObjectHideFlags: 0

@@ -260,15 +260,15 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (inputHandler.jump_input)
         {
-            //if(inputHandler.moveAmount > 0) //you must be moving to jump
-            //{
+            if(inputHandler.moveAmount > 0) //you must be moving to jump
+            {
                 moveDirection = cameraObject.forward * inputHandler.vertical;
                 moveDirection += cameraObject.right * inputHandler.horizontal;
                 animatorHandler.PlayTargetAnimation("Jump", true);
                 moveDirection.y = 0;
                 Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
                 myTransform.rotation = jumpRotation;
-            //}
+            }
         }
     } 
   
