@@ -15,11 +15,24 @@ public class InputHandler : MonoBehaviour
     public bool rollFlag; //dodge stuff
     public bool isInteracting; //dodge stuff
 
+    public bool left_click; //attack stuff
+    public bool right_click; //attack stuff
+
+    public bool jump_input;
+
+    /*
+    public float clickTimer; //attack stuff
+    public bool holdClickFlag; //attack stuff
+    public bool lightAttackFlag; //attack stuff
+    public bool heavyAttackFlag; //attack stuff
+    */
 
     public float rollInputTimer; //sprinting stuff
     public bool sprintFlag; //sprinting stuff
 
     PlayerControls inputActions;
+    PlayerAttacker playerAttacker;
+    PlayerInventory playerInventory;
     CameraHandler cameraHandler;
 
     Vector2 movementInput;
@@ -28,6 +41,8 @@ public class InputHandler : MonoBehaviour
     private void Awake()
     {
         cameraHandler = CameraHandler.singleton;
+        playerAttacker = GetComponent<PlayerAttacker>();
+        playerInventory = GetComponent<PlayerInventory>();
     }
 
     private void FixedUpdate()
@@ -62,6 +77,8 @@ public class InputHandler : MonoBehaviour
     {
         MoveInput(delta);
         HandleRollInput(delta);  //dodge stuff
+        HandleAttackInput(delta);
+        HandleJumpInput();
     }
 
     private void MoveInput(float delta)
@@ -83,13 +100,68 @@ public class InputHandler : MonoBehaviour
         }
         else
         {
-            if(rollInputTimer > 0 && rollInputTimer < 0.5f)
+            if(rollInputTimer > 0 && rollInputTimer < 0.2f)
             {
                 sprintFlag = false;
                 rollFlag = true;
             }
             rollInputTimer = 0;
         }
+    }
+
+    private void HandleAttackInput(float delta) //attack stuff
+    {
+        inputActions.PlayerActions.LeftClick.performed += i => left_click = true;
+        inputActions.PlayerActions.RightClick.performed += i => right_click = true;
+
+        if (left_click)
+        {
+            playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
+        }
+
+        /*
+        if (right_click)
+        {
+            playerAttacker.HandleHeavyMeleeAttack(playerInventory.leftWeapon);
+        }
+        */
+        
+        /*
+        left_click = inputActions.PlayerActions.LeftClick.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+        while(left_click)
+        {
+            clickTimer += delta;
+        }
+        if (clickTimer > 0 && clickTimer < 0.5f && left_click == false)
+        {
+            lightAttackFlag = true;
+            clickTimer = 0;
+        } else if (clickTimer > 0.5f && left_click == false)
+        {
+            heavyAttackFlag = true;
+            clickTimer = 0;
+        }
+
+
+        if (lightAttackFlag == true)
+        {
+            playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
+            lightAttackFlag = false;
+            heavyAttackFlag = false;
+        }
+
+        if (heavyAttackFlag == true)
+        {
+            playerAttacker.HandleHeavyMeleeAttack(playerInventory.leftWeapon);
+            lightAttackFlag = false;
+            heavyAttackFlag = false;
+        }*/
+        
+    }
+
+    private void HandleJumpInput()
+    {
+        inputActions.PlayerActions.Jump.performed += i => jump_input = true;
     }
 }
 

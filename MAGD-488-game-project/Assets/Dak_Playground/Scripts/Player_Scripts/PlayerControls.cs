@@ -134,6 +134,22 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Left Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""4d3b200a-681b-4151-8165-68e48db19e05"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Right Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""802da0a6-58f6-46f8-8137-2db3870a9b46"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -158,6 +174,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ef9f76c1-6417-41b2-867d-de0589ae3333"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Left Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0785943c-c3b2-4ca3-bff3-f969c566002b"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Right Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -172,6 +210,8 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_PlayerActions = asset.FindActionMap("Player Actions", throwIfNotFound: true);
         m_PlayerActions_Roll = m_PlayerActions.FindAction("Roll", throwIfNotFound: true);
         m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
+        m_PlayerActions_LeftClick = m_PlayerActions.FindAction("Left Click", throwIfNotFound: true);
+        m_PlayerActions_RightClick = m_PlayerActions.FindAction("Right Click", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -264,12 +304,16 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private IPlayerActionsActions m_PlayerActionsActionsCallbackInterface;
     private readonly InputAction m_PlayerActions_Roll;
     private readonly InputAction m_PlayerActions_Jump;
+    private readonly InputAction m_PlayerActions_LeftClick;
+    private readonly InputAction m_PlayerActions_RightClick;
     public struct PlayerActionsActions
     {
         private @PlayerControls m_Wrapper;
         public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Roll => m_Wrapper.m_PlayerActions_Roll;
         public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
+        public InputAction @LeftClick => m_Wrapper.m_PlayerActions_LeftClick;
+        public InputAction @RightClick => m_Wrapper.m_PlayerActions_RightClick;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -285,6 +329,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
                 @Jump.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnJump;
+                @LeftClick.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLeftClick;
+                @LeftClick.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLeftClick;
+                @LeftClick.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnLeftClick;
+                @RightClick.started -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRightClick;
+                @RightClick.performed -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRightClick;
+                @RightClick.canceled -= m_Wrapper.m_PlayerActionsActionsCallbackInterface.OnRightClick;
             }
             m_Wrapper.m_PlayerActionsActionsCallbackInterface = instance;
             if (instance != null)
@@ -295,6 +345,12 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Jump.started += instance.OnJump;
                 @Jump.performed += instance.OnJump;
                 @Jump.canceled += instance.OnJump;
+                @LeftClick.started += instance.OnLeftClick;
+                @LeftClick.performed += instance.OnLeftClick;
+                @LeftClick.canceled += instance.OnLeftClick;
+                @RightClick.started += instance.OnRightClick;
+                @RightClick.performed += instance.OnRightClick;
+                @RightClick.canceled += instance.OnRightClick;
             }
         }
     }
@@ -308,5 +364,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     {
         void OnRoll(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnLeftClick(InputAction.CallbackContext context);
+        void OnRightClick(InputAction.CallbackContext context);
     }
 }

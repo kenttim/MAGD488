@@ -147,7 +147,12 @@ PrefabInstance:
         type: 3}
       propertyPath: parentOverride
       value: 
-      objectReference: {fileID: 1474029093}
+      objectReference: {fileID: 1402282146}
+    - target: {fileID: 7109761122027247103, guid: 920f1e4ad0529dc4fab07bc87316de03,
+        type: 3}
+      propertyPath: currentWeaponModel
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8308309236263180926, guid: 920f1e4ad0529dc4fab07bc87316de03,
         type: 3}
       propertyPath: m_DynamicOccludee
@@ -14706,6 +14711,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &802166128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8308309236601920991, guid: 920f1e4ad0529dc4fab07bc87316de03,
+    type: 3}
+  m_PrefabInstance: {fileID: 36445154}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &802166135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 802166128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621a00375a58b21449cfd0f146edfa70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &914382520
 GameObject:
   m_ObjectHideFlags: 0
@@ -14804,7 +14827,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20326
+  m_Name: pb_Mesh15332
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -14961,9 +14984,9 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!4 &1474029093 stripped
+--- !u!4 &1402282146 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 8308309236263180925, guid: 920f1e4ad0529dc4fab07bc87316de03,
+  m_CorrespondingSourceObject: {fileID: 1539248755751773199, guid: 920f1e4ad0529dc4fab07bc87316de03,
     type: 3}
   m_PrefabInstance: {fileID: 36445154}
   m_PrefabAsset: {fileID: 0}
@@ -14973,7 +14996,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh20292
+  m_Name: pb_Mesh15298
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

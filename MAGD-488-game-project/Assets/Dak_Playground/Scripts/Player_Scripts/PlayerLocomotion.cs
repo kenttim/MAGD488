@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
 {
-    playerManager playerManager; // fall stuff
+    PlayerManager playerManager; // fall stuff
     Transform cameraObject;
     InputHandler inputHandler;
     public Vector3 moveDirection;
@@ -41,7 +41,7 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void Start()
     {
-        playerManager = GetComponent<playerManager>(); // fall stuff
+        playerManager = GetComponent<PlayerManager>(); // fall stuff
         rigidbody = GetComponent<Rigidbody>();
         inputHandler = GetComponent<InputHandler>();
         cameraObject = Camera.main.transform;
@@ -106,8 +106,16 @@ public class PlayerLocomotion : MonoBehaviour
             moveDirection *= speed;
         } else
         {
-            moveDirection *= speed;
-            isSprinting = false;
+            if (inputHandler.moveAmount < .5)
+            {
+                moveDirection *= movementSpeed;
+                isSprinting = false;
+            }
+            else
+            {
+                moveDirection *= speed;
+                isSprinting = false;
+            }
         } //sprinting stuff
 
 
@@ -242,6 +250,27 @@ public class PlayerLocomotion : MonoBehaviour
         }
 
     }
+
+    public void HandleJumping() // jump stuff
+    {
+        if (inputHandler.isInteracting)
+        {
+            return;
+        }
+
+        if (inputHandler.jump_input)
+        {
+            //if(inputHandler.moveAmount > 0) //you must be moving to jump
+            //{
+                moveDirection = cameraObject.forward * inputHandler.vertical;
+                moveDirection += cameraObject.right * inputHandler.horizontal;
+                animatorHandler.PlayTargetAnimation("Jump", true);
+                moveDirection.y = 0;
+                Quaternion jumpRotation = Quaternion.LookRotation(moveDirection);
+                myTransform.rotation = jumpRotation;
+            //}
+        }
+    } 
   
 }
 

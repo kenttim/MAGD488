@@ -16,3 +16,6 @@ MonoBehaviour:
   itemName: Sword
   modelPrefab: {fileID: 2433611350668483367, guid: ec1ef68199db7954eb241342846b343f,
     type: 3}
+  L_Attack_1: Outward swing
+  H_Attack_1: Inward swing
+  R_Attack: 

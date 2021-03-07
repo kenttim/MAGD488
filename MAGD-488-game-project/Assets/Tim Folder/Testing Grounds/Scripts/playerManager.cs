@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerManager : MonoBehaviour
+public class PlayerManager : MonoBehaviour
 {
     //dodge stuff
     InputHandler inputHandler;
@@ -23,13 +23,21 @@ public class playerManager : MonoBehaviour
     {
         float delta = Time.deltaTime;
         inputHandler.isInteracting = anim.GetBool("isInteracting"); //restructure error for later
-        inputHandler.rollFlag = false;
-        inputHandler.sprintFlag = false;
+
+        anim.SetBool("isInAir", isInAir); // jump stuff
+
         playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+        playerLocomotion.HandleJumping(); // jump stuff
     }
 
     private void LateUpdate() // fall stuff
     {
+        inputHandler.rollFlag = false;
+        inputHandler.sprintFlag = false;
+        inputHandler.left_click = false;
+        inputHandler.right_click = false;
+        inputHandler.jump_input = false; // jump stuff
+
         if (isInAir) 
         {
             playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime; // fall stuff
