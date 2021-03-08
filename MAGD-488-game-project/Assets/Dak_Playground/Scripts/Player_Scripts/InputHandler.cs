@@ -13,7 +13,7 @@ public class InputHandler : MonoBehaviour
 
     public bool b_input; //dodge stuff
     public bool rollFlag; //dodge stuff
-    public bool isInteracting; //dodge stuff
+    
 
     public bool left_click; //attack stuff
     public bool right_click; //attack stuff
@@ -40,20 +40,8 @@ public class InputHandler : MonoBehaviour
 
     private void Awake()
     {
-        cameraHandler = CameraHandler.singleton;
         playerAttacker = GetComponent<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
-    }
-
-    private void FixedUpdate()
-    {
-        float delta = Time.fixedDeltaTime;
-
-        if(cameraHandler != null)
-        {
-            cameraHandler.FollowTarget(delta);
-            cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
-        }
     }
 
     public void OnEnable()
@@ -118,13 +106,12 @@ public class InputHandler : MonoBehaviour
         {
             playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
         }
-
-        /*
+        
         if (right_click)
         {
-            playerAttacker.HandleHeavyMeleeAttack(playerInventory.leftWeapon);
+            playerAttacker.HandleHeavyMeleeAttack(playerInventory.rightWeapon);
         }
-        */
+        
         
         /*
         left_click = inputActions.PlayerActions.LeftClick.phase == UnityEngine.InputSystem.InputActionPhase.Started;

@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1683657598806920388}
+  - component: {fileID: 7152940177191186675}
   m_Layer: 0
   m_Name: Sword_Base
   m_TagString: Untagged
@@ -62,6 +63,19 @@ Transform:
   m_Father: {fileID: 6464362083222541158}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7152940177191186675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4807994497318947818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18e9ce22a0d66d045a3176418fc5bc0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentWeaponDamage: 25
 --- !u!1 &4832011894032824916
 GameObject:
   m_ObjectHideFlags: 0
@@ -73,6 +87,7 @@ GameObject:
   - component: {fileID: 2873679606955272366}
   - component: {fileID: 8722669813074014750}
   - component: {fileID: 3458510825312322705}
+  - component: {fileID: 5646642897417105961}
   m_Layer: 0
   m_Name: pCylinder11
   m_TagString: Untagged
@@ -141,6 +156,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5646642897417105961
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4832011894032824916}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 0.25}
+  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1 &7458835721797126856
 GameObject:
   m_ObjectHideFlags: 0

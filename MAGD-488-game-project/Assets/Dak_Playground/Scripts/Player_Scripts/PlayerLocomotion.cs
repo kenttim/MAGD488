@@ -37,7 +37,7 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     float fallSpeed = 45; // fall stuff
 
-    public bool isSprinting; //sprinting stuff
+    
 
     private void Start()
     {
@@ -51,7 +51,6 @@ public class PlayerLocomotion : MonoBehaviour
 
         playerManager.isGrounded = true; // fall stuff
         ignoreForGroundCheck = ~(1 << 9 | 1 << 11);
-
     }
 
     #region Movement
@@ -87,7 +86,7 @@ public class PlayerLocomotion : MonoBehaviour
             return;
         }
         
-        if (inputHandler.isInteracting) // fall stuff
+        if (playerManager.isInteracting) // fall stuff
         {
             return;
         }
@@ -102,29 +101,27 @@ public class PlayerLocomotion : MonoBehaviour
         if (inputHandler.sprintFlag && inputHandler.moveAmount > 0.5) //sprinting stuff
         {
             speed = sprintSpeed;
-            isSprinting = true;
+            playerManager.isSprinting = true;
             moveDirection *= speed;
         } else
         {
             if (inputHandler.moveAmount < .5)
             {
                 moveDirection *= movementSpeed;
-                isSprinting = false;
+                playerManager.isSprinting = false;
             }
             else
             {
                 moveDirection *= speed;
-                isSprinting = false;
+                playerManager.isSprinting = false;
             }
         } //sprinting stuff
-
-
 
         Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
         rigidbody.velocity = projectedVelocity;
 
         //when animations are added                                     //sprinting stuff
-        animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, isSprinting);
+        animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, playerManager.isSprinting);
 
         if (animatorHandler.canRotate)
         {
@@ -134,19 +131,6 @@ public class PlayerLocomotion : MonoBehaviour
 
     #endregion
 
-    public void Update()
-    {
-        float delta = Time.deltaTime;
-
-        isSprinting = inputHandler.b_input;
-
-        inputHandler.TickInput(delta);
-
-        HandleMovement(delta); 
-
-        HandleRollAndSprint(delta);  //dodge stuff
-
-    }
 
     public void HandleRollAndSprint(float delta)  //dodge stuff
     {
@@ -225,7 +209,7 @@ public class PlayerLocomotion : MonoBehaviour
             }
             if (playerManager.isInAir == false)
             {
-                if (inputHandler.isInteracting == false)
+                if (playerManager.isInteracting == false)
                 {
                     animatorHandler.PlayTargetAnimation("Falling", true); //probably problem
                 }
@@ -236,7 +220,7 @@ public class PlayerLocomotion : MonoBehaviour
                 playerManager.isInAir = true;
             }
 
-            if(inputHandler.isInteracting || inputHandler.moveAmount > 0)
+            if(playerManager.isInteracting || inputHandler.moveAmount > 0)
             {
                 myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime / 0.1f);
             } else
@@ -247,7 +231,7 @@ public class PlayerLocomotion : MonoBehaviour
 
         if (playerManager.isGrounded)
         {
-            if(inputHandler.isInteracting || inputHandler.moveAmount > 0)
+            if(playerManager.isInteracting || inputHandler.moveAmount > 0)
             {
                 myTransform.position = Vector3.Lerp(myTransform.position, targetPosition, Time.deltaTime);
             }
@@ -258,10 +242,9 @@ public class PlayerLocomotion : MonoBehaviour
         }
 
     }
-
     public void HandleJumping() // jump stuff
     {
-        if (inputHandler.isInteracting)
+        if (playerManager.isInteracting)
         {
             return;
         }

@@ -44,7 +44,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Take Damage
-  m_Speed: 1
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 901431007765149184}
@@ -245,7 +245,7 @@ AnimatorStateMachine:
     m_Position: {x: -80, y: -190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1149269604614467078}
-    m_Position: {x: 570, y: -110, z: 0}
+    m_Position: {x: 570, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2098918592105888482}
     m_Position: {x: 570, y: -50, z: 0}
@@ -431,7 +431,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Inward swing
+  m_Name: Heavy Attack
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -445,8 +445,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 787310d0c755aa34589696ff4f70e9ff,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 1c9ec0feee251444d8d0345ae8e64a4e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -459,8 +458,8 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Outward swing
-  m_Speed: 1
+  m_Name: Light Attack
+  m_Speed: 2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -9220531572958971902}
@@ -473,8 +472,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 96e9495584d4963419546ffbd723f4e2,
-    type: 3}
+  m_Motion: {fileID: 7400000, guid: 88382a143be0a8d4189d42df29008e57, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: isInteracting

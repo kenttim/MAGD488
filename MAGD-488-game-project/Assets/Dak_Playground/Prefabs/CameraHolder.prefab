@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2812600751643471193}
-  - component: {fileID: 2812600751643471194}
+  - component: {fileID: 489071020}
   m_Layer: 9
   m_Name: CameraHolder
   m_TagString: Untagged
@@ -106,7 +106,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2812600751643471194
+--- !u!114 &489071020
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   cameraTransform: {fileID: 2812600751309154999}
   cameraPivotTransform: {fileID: 2812600751908184956}
-  lookSpeed: 0.13
+  lookSpeed: 0.1
   followSpeed: 0.1
   pivotSpeed: 0.03
   minimumPivot: -35

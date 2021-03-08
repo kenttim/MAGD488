@@ -8,6 +8,7 @@ public class WeaponHolderSlot : MonoBehaviour
     public Transform parentOverride;
     public bool isLeftHandSlot;
     public bool isRightHandSlot;
+
     public GameObject currentWeaponModel;
 
     public void UnloadWeapon()
@@ -36,7 +37,7 @@ public class WeaponHolderSlot : MonoBehaviour
             return;
         }
 
-        GameObject model = Instantiate(weaponItem.modelPrefab) as GameObject;
+        GameObject model = Instantiate(weaponItem.modelPrefab);
         if(model != null)
         {
             if(parentOverride != null)
