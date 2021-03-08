@@ -211,7 +211,7 @@ public class PlayerLocomotion : MonoBehaviour
             {
                 if (playerManager.isInteracting == false)
                 {
-                    animatorHandler.PlayTargetAnimation("Falling", true); //probably problem
+                    animatorHandler.PlayTargetAnimation("Falling", true);
                 }
 
                 Vector3 vel = rigidbody.velocity;
