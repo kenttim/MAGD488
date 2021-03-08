@@ -20,6 +20,8 @@ public class InputHandler : MonoBehaviour
 
     public bool jump_input;
 
+    public bool interact_input;
+
     /*
     public float clickTimer; //attack stuff
     public bool holdClickFlag; //attack stuff
@@ -67,6 +69,8 @@ public class InputHandler : MonoBehaviour
         HandleRollInput(delta);  //dodge stuff
         HandleAttackInput(delta);
         HandleJumpInput();
+
+        HandleInteractInput();
     }
 
     private void MoveInput(float delta)
@@ -149,6 +153,12 @@ public class InputHandler : MonoBehaviour
     private void HandleJumpInput()
     {
         inputActions.PlayerActions.Jump.performed += i => jump_input = true;
+    }
+
+    private void HandleInteractInput()
+    {
+        inputActions.PlayerActions.Interact.performed += i => interact_input = true;
+
     }
 }
 

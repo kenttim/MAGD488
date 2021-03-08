@@ -8,6 +8,7 @@ public class WeaponItem : Items
 {
     public GameObject modelPrefab;
     public bool isUnarmed;
+    
 
     [Header("Melee Attack Animations")]
     public string L_Attack_1;

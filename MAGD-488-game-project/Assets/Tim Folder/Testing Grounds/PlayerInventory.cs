@@ -9,6 +9,8 @@ public class PlayerInventory : MonoBehaviour
     public WeaponItem leftWeapon;
     public WeaponItem rightWeapon;
 
+    public List<WeaponItem> weaponsInventory;
+
     private void Awake()
     {
         slotManager = GetComponentInChildren<WeaponSlotManager>();
