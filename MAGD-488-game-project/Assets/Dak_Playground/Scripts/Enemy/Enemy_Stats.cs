@@ -8,8 +8,6 @@ public class Enemy_Stats : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
-    public HealthBar healthbar;
-
     Animator animator;
 
     private void Awake()
@@ -20,7 +18,6 @@ public class Enemy_Stats : MonoBehaviour
     {
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
-        healthbar.SetMaxHealth(maxHealth);
     }
 
     private int SetMaxHealthFromHealthLevel()
@@ -32,8 +29,6 @@ public class Enemy_Stats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage;
-
-        healthbar.SetCurrentHealth(currentHealth);
 
         animator.Play("Take Damage");
 
