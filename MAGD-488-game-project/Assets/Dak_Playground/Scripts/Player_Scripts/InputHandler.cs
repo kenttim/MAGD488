@@ -53,6 +53,11 @@ public class InputHandler : MonoBehaviour
             inputActions = new PlayerControls();
             inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
             inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+            
+            inputActions.PlayerActions.LeftClick.performed += i => left_click = true;
+            inputActions.PlayerActions.RightClick.performed += i => right_click = true;
+            inputActions.PlayerActions.Jump.performed += i => jump_input = true;
+            inputActions.PlayerActions.Interact.performed += i => interact_input = true;
         }
 
         inputActions.Enable();
@@ -68,9 +73,6 @@ public class InputHandler : MonoBehaviour
         MoveInput(delta);
         HandleRollInput(delta);  //dodge stuff
         HandleAttackInput(delta);
-        HandleJumpInput();
-
-        HandleInteractInput();
     }
 
     private void MoveInput(float delta)
@@ -85,10 +87,12 @@ public class InputHandler : MonoBehaviour
     private void HandleRollInput(float delta)  //dodge stuff
     {
         b_input = inputActions.PlayerActions.Roll.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+        sprintFlag = b_input;
+
         if (b_input)
         {
             rollInputTimer += delta;
-            sprintFlag = true;
+            
         }
         else
         {
@@ -103,8 +107,7 @@ public class InputHandler : MonoBehaviour
 
     private void HandleAttackInput(float delta) //attack stuff
     {
-        inputActions.PlayerActions.LeftClick.performed += i => left_click = true;
-        inputActions.PlayerActions.RightClick.performed += i => right_click = true;
+        
 
         if (left_click)
         {
@@ -150,16 +153,6 @@ public class InputHandler : MonoBehaviour
         
     }
 
-    private void HandleJumpInput()
-    {
-        inputActions.PlayerActions.Jump.performed += i => jump_input = true;
-    }
-
-    private void HandleInteractInput()
-    {
-        inputActions.PlayerActions.Interact.performed += i => interact_input = true;
-
-    }
 }
 
 

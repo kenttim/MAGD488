@@ -128,18 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 115987738113466953, guid: 920f1e4ad0529dc4fab07bc87316de03,
-        type: 3}
-      propertyPath: currentWeaponModel
-      value: 
-      objectReference: {fileID: 7458835721797126856, guid: 10a753ab5c497d545bd9b11478fdfd01,
-        type: 3}
-    - target: {fileID: 1411217773146723873, guid: 920f1e4ad0529dc4fab07bc87316de03,
-        type: 3}
-      propertyPath: currentWeaponModel
-      value: 
-      objectReference: {fileID: 7458835721797126856, guid: 10a753ab5c497d545bd9b11478fdfd01,
-        type: 3}
     - target: {fileID: 2946879846723708459, guid: 920f1e4ad0529dc4fab07bc87316de03,
         type: 3}
       propertyPath: interactableUIGameObject
