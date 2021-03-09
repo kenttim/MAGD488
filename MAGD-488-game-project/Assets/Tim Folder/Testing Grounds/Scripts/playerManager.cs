@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
     Animator anim;
     CameraHandler cameraHandler;
     PlayerLocomotion playerLocomotion;
+    PlayerStats playerStats;
     InteractableUI interactableUI;
     public GameObject interactableUIGameObject;
     public GameObject itemInteractableGameObject;
@@ -26,6 +27,7 @@ public class PlayerManager : MonoBehaviour
     }
     void Start()
     {
+        playerStats = GetComponent<PlayerStats>();
         playerLocomotion = GetComponent<PlayerLocomotion>(); // fall stuff
         inputHandler = GetComponent<InputHandler>();
         anim = GetComponentInChildren<Animator>();
@@ -43,6 +45,8 @@ public class PlayerManager : MonoBehaviour
         inputHandler.TickInput(delta);
         playerLocomotion.HandleRollAndSprint(delta);  //dodge stuff
         playerLocomotion.HandleJumping(); // jump stuff
+
+        playerStats.StaminaRegen();
 
         CheckForInteractable();
     }

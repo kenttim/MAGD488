@@ -13,6 +13,12 @@ public class WeaponItem : Items
     [Header("Melee Attack Animations")]
     public string L_Attack_1;
     public string H_Attack_1;
+
     [Header("Range Attack Animations")]
     public string R_Attack;
+
+    [Header("Stamina Costs")]
+    public int baseStamina;
+    public float lightAttackMultiplier;
+    public float heavyAttackMultiplier;
 }

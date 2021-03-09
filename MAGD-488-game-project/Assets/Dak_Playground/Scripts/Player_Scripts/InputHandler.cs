@@ -36,6 +36,7 @@ public class InputHandler : MonoBehaviour
     PlayerAttacker playerAttacker;
     PlayerInventory playerInventory;
     CameraHandler cameraHandler;
+    PlayerStats playerStats;
 
     Vector2 movementInput;
     Vector2 cameraInput;
@@ -44,6 +45,7 @@ public class InputHandler : MonoBehaviour
     {
         playerAttacker = GetComponent<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     public void OnEnable()
@@ -92,7 +94,6 @@ public class InputHandler : MonoBehaviour
         if (b_input)
         {
             rollInputTimer += delta;
-            
         }
         else
         {
@@ -108,18 +109,36 @@ public class InputHandler : MonoBehaviour
     private void HandleAttackInput(float delta) //attack stuff
     {
         
-
         if (left_click)
         {
-            playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
-        }
+            int lightAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.leftWeapon.baseStamina * playerInventory.leftWeapon.lightAttackMultiplier);
+            
+            if(playerStats.currentStamina >= lightAttackStaminaMinimum)
+            {
+                playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
+            }
+            else
+            {
+                Debug.Log("Out of stamina");
+            }    
+        } 
         
         if (right_click)
         {
-            playerAttacker.HandleHeavyMeleeAttack(playerInventory.rightWeapon);
+            int heavyAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.rightWeapon.baseStamina * playerInventory.rightWeapon.heavyAttackMultiplier);
+            
+            if (playerStats.currentStamina >= heavyAttackStaminaMinimum)
+            {
+                playerAttacker.HandleHeavyMeleeAttack(playerInventory.rightWeapon);
+            }
+            else
+            {
+                Debug.Log("Out of stamina");
+            }
         }
-        
-        
+     
+
+
         /*
         left_click = inputActions.PlayerActions.LeftClick.phase == UnityEngine.InputSystem.InputActionPhase.Started;
         while(left_click)
@@ -150,7 +169,7 @@ public class InputHandler : MonoBehaviour
             lightAttackFlag = false;
             heavyAttackFlag = false;
         }*/
-        
+
     }
 
 }

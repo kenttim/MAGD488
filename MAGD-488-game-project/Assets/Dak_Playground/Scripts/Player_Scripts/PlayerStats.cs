@@ -8,12 +8,21 @@ public class PlayerStats : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
-    public HealthBar healthbar;
+    public int staminaLevel = 10;
+    public int maxStamina;
+    public int currentStamina;
+
+    int staminaTimer = 0;
+
+    HealthBar healthbar;
+    StaminaBar staminabar;
 
     AnimatorHandler animatorHandler;
 
     private void Awake()
     {
+        healthbar = FindObjectOfType<HealthBar>();
+        staminabar = FindObjectOfType<StaminaBar>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
     }
     void Start()
@@ -21,12 +30,24 @@ public class PlayerStats : MonoBehaviour
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
+        healthbar.SetCurrentHealth(currentHealth);
+
+        maxStamina = SetMaxStaminaFromStaminaLevel();
+        currentStamina = maxStamina;
+        staminabar.SetMaxStamina(maxStamina);
+        staminabar.SetCurrentStamina(currentStamina);
     }
 
     private int SetMaxHealthFromHealthLevel()
     {
         maxHealth = healthLevel * 10;
         return maxHealth;
+    }
+
+    private int SetMaxStaminaFromStaminaLevel()
+    {
+        maxStamina = staminaLevel * 10;
+        return maxStamina;
     }
 
     public void TakeDamage(int damage)
@@ -42,6 +63,25 @@ public class PlayerStats : MonoBehaviour
             currentHealth = 0;
             animatorHandler.PlayTargetAnimation("Death", true);
             //handle player death
+        }
+    }
+
+    public void TakeStaminaDamage(int damage)
+    {
+        currentStamina = currentStamina - damage;
+
+        staminabar.SetCurrentStamina(currentStamina);
+    }
+
+    public void StaminaRegen()
+    {
+        staminaTimer += 1;
+
+       if(currentStamina <= maxStamina && (staminaTimer % 100) == 0)
+        {
+            currentStamina += 1;
+            staminabar.SetCurrentStamina(currentStamina);
+            staminaTimer = 0;
         }
     }
 }
