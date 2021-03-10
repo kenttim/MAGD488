@@ -20,6 +20,6 @@ MonoBehaviour:
   L_Attack_1: Light Attack
   H_Attack_1: Heavy Attack
   R_Attack: 
-  baseStamina: 0
-  lightAttackMultiplier: 0
-  heavyAttackMultiplier: 0
+  baseStamina: 10
+  lightAttackMultiplier: 1
+  heavyAttackMultiplier: 2
