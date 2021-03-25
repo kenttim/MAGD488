@@ -67,7 +67,7 @@ public class PlayerStats : CharacterStats
     {
         staminaTimer += 1;
 
-       if(currentStamina < maxStamina && (staminaTimer % 100) == 0)
+       if(currentStamina <= maxStamina && (staminaTimer % 100) == 0)
         {
             currentStamina += 1;
             staminabar.SetCurrentStamina(currentStamina);
