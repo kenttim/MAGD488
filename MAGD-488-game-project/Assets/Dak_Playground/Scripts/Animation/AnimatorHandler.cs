@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimatorHandler : AnimatorManager
+public class AnimatorHandler : MonoBehaviour
 {
     PlayerManager playerManager;
+    public Animator anim;
     InputHandler inputHandler; //dodge stuff
     PlayerLocomotion playerLocomotion;  //dodge stuff
     int vertical;
@@ -82,7 +83,12 @@ public class AnimatorHandler : AnimatorManager
         anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
     }
 
-    
+    public void PlayTargetAnimation(string targetAnim, bool isInteracting)  //dodge stuff
+    {
+        anim.applyRootMotion = isInteracting;
+        anim.SetBool("isInteracting", isInteracting);
+        anim.CrossFade(targetAnim, 0.2f);
+    }
 
     public void CanRotate()
     {
