@@ -326,8 +326,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   distanceFromTarget: 0
-  stoppingDistance: 10
-  rotationSpeed: 15
+  stoppingDistance: 8
+  rotationSpeed: 20
 --- !u!1 &758621353
 GameObject:
   m_ObjectHideFlags: 0
