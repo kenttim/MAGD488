@@ -2,18 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : CharacterStats
 {
-    public int healthLevel = 10;
-    public int maxHealth;
-    public int currentHealth;
-
-    public int staminaLevel = 10;
-    public int maxStamina;
-    public int currentStamina;
-
-    int staminaTimer = 0;
-
     HealthBar healthbar;
     StaminaBar staminabar;
 
@@ -77,7 +67,7 @@ public class PlayerStats : MonoBehaviour
     {
         staminaTimer += 1;
 
-       if(currentStamina <= maxStamina && (staminaTimer % 100) == 0)
+       if(currentStamina < maxStamina && (staminaTimer % 100) == 0)
         {
             currentStamina += 1;
             staminabar.SetCurrentStamina(currentStamina);
