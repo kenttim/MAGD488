@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy_Manager : MonoBehaviour
+public class Enemy_Manager : CharacterManager
 {
 
     EnemyLocomotionManager enemyLocomotionManager;

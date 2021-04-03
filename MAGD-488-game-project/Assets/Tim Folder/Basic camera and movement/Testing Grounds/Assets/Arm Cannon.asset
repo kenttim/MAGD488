@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 634542ff20d58744a969fc054c6c9e30, type: 3}
-  m_Name: Sword
+  m_Name: Arm Cannon
   m_EditorClassIdentifier: 
-  itemIcon: {fileID: 21300000, guid: 357d48457939aa44581c63e59bf0ee6c, type: 3}
-  itemName: Sword
-  modelPrefab: {fileID: 7458835721797126856, guid: 10a753ab5c497d545bd9b11478fdfd01,
+  itemIcon: {fileID: 0}
+  itemName: Arm Cannon
+  modelPrefab: {fileID: 8553540772098126169, guid: 277eb3c25fa27374c9a3b90df8209dad,
     type: 3}
   isUnarmed: 0
-  L_Attack_1: Light Attack
-  H_Attack_1: Heavy Attack
-  R_Attack: Shooting Gun
-  baseStamina: 10
-  lightAttackMultiplier: 1
-  heavyAttackMultiplier: 2
+  L_Attack_1: 
+  H_Attack_1: 
+  R_Attack: 
+  baseStamina: 0
+  lightAttackMultiplier: 0
+  heavyAttackMultiplier: 0

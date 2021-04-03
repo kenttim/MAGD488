@@ -13,7 +13,6 @@ public class InputHandler : MonoBehaviour
 
     public bool b_input; //dodge stuff
     public bool rollFlag; //dodge stuff
-    
 
     public bool left_click; //attack stuff
     public bool right_click; //attack stuff
@@ -21,6 +20,9 @@ public class InputHandler : MonoBehaviour
     public bool jump_input;
 
     public bool interact_input;
+
+    public bool lockOnFlag;
+    public bool lockOnInput;
 
     /*
     public float clickTimer; //attack stuff
@@ -46,6 +48,7 @@ public class InputHandler : MonoBehaviour
         playerAttacker = GetComponent<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
         playerStats = GetComponent<PlayerStats>();
+        cameraHandler = FindObjectOfType<CameraHandler>();
     }
 
     public void OnEnable()
@@ -60,6 +63,7 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.RightClick.performed += i => right_click = true;
             inputActions.PlayerActions.Jump.performed += i => jump_input = true;
             inputActions.PlayerActions.Interact.performed += i => interact_input = true;
+            inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
         }
 
         inputActions.Enable();
@@ -75,6 +79,7 @@ public class InputHandler : MonoBehaviour
         MoveInput(delta);
         HandleRollInput(delta);  //dodge stuff
         HandleAttackInput(delta);
+        HandleLockOnInput();
     }
 
     private void MoveInput(float delta)
@@ -171,6 +176,30 @@ public class InputHandler : MonoBehaviour
         }*/
 
     }
+
+    private void HandleLockOnInput()
+    {
+        if(lockOnInput && lockOnFlag == false)
+        {
+            
+            lockOnInput = false;
+            cameraHandler.HandleLockOn();
+
+            if(cameraHandler.nearestLockOnTarget != null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.nearestLockOnTarget;
+                lockOnFlag = true;
+            }
+
+        }
+        else if(lockOnInput && lockOnFlag == true)
+        {
+            lockOnInput = false;
+            lockOnFlag = false;
+            cameraHandler.ClearLockOnTargets();
+        }
+    }
+
 
 }
 

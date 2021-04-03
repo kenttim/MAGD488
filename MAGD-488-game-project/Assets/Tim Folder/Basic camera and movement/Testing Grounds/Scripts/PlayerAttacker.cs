@@ -36,4 +36,16 @@ public class PlayerAttacker : MonoBehaviour
         weaponSlotManager.attackingWeapon = weapon;
         animatorHandler.PlayTargetAnimation(weapon.H_Attack_1, true);
     }
+
+    public void HandleRangeAttack(WeaponItem weapon)
+    {
+        if (playerManager.isInteracting)
+        {
+            return;
+        }
+
+        weaponSlotManager.attackingWeapon = weapon;
+        animatorHandler.PlayTargetAnimation(weapon.R_Attack, true);
+
+    }
 }
