@@ -304,10 +304,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57e2bb4a0f4dc5345acb53c6a960a59a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lockOnTransform: {fileID: 0}
+  enemyAttacks:
+  - {fileID: 11400000, guid: 1acceb89330ff814cab7dde953c2e2ef, type: 2}
+  - {fileID: 11400000, guid: eee21c3010010ac468b06c2b6849a163, type: 2}
+  currentAttack: {fileID: 0}
   isPerformingAction: 0
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
+  currentRecoveryTime: 0
 --- !u!114 &496965214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,7 +835,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 1
+  m_StoppingDistance: 2
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
