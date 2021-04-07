@@ -15,7 +15,8 @@ public class Enemy_Manager : CharacterManager
     public CharacterStats currentTarget;
 
     public bool isPerformingAction;
-    public float distanceFromTarget;
+    public bool isInteracting;
+
     public float rotationSpeed = 20f;
     public float maximumAttackRange = 8.5f;
 
@@ -24,7 +25,7 @@ public class Enemy_Manager : CharacterManager
     //the higher the maximum and lower the minimum the greater the fov becomes
     public float maximumDetectionAngle = 50;
     public float minimumDetectionAngle = -50;
-    public float viewableAngle;
+ 
 
     public float currentRecoveryTime = 0;
 
@@ -46,6 +47,8 @@ public class Enemy_Manager : CharacterManager
     private void Update()
     {
         HandleRecoveryTimer();
+
+        isInteracting = enemyAnimationManager.anim.GetBool("isInteracting");
     }
 
     private void FixedUpdate()

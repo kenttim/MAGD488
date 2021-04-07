@@ -12,7 +12,8 @@ public class AttackState : State
     {
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
         float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
-        enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, transform.position);
+        float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
+   
         //select one of our many attacks
         //if the selected attack is not able to be used because of bad angle or distance, select a new attack
         //if the attack is viable, stop our movement and attack the target
@@ -30,16 +31,16 @@ public class AttackState : State
         {
             //if too close, get new attack
 
-            if(enemyManager.distanceFromTarget < currentAttack.minimumDistanceNeededToAttack)
+            if(distanceFromTarget < currentAttack.minimumDistanceNeededToAttack)
             {
                 return this;
             }
             //if we are close enough to atack, then let us proceed
-            else if (enemyManager.distanceFromTarget < currentAttack.maximumDistanceNeededToAttack)
+            else if (distanceFromTarget < currentAttack.maximumDistanceNeededToAttack)
             {
                 //if our enemy is within our attacks viewable angle, we attack
-                if(enemyManager.viewableAngle <= currentAttack.maximumAttackAngle &&
-                    enemyManager.viewableAngle >= currentAttack.minimumAttackAngle)
+                if(viewableAngle <= currentAttack.maximumAttackAngle &&
+                    viewableAngle >= currentAttack.minimumAttackAngle)
                 {
                     if(enemyManager.currentRecoveryTime <=0 && enemyManager.isPerformingAction == false)
                     {
@@ -66,8 +67,8 @@ public class AttackState : State
     {
         Vector3 targetsDirection = enemyManager.currentTarget.transform.position - transform.position;
         float viewableAngle = Vector3.Angle(targetsDirection, transform.forward);
-        enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, transform.position);
-        Debug.Log("Distance from target currently is: " + enemyManager.distanceFromTarget);
+        float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, transform.position);
+        Debug.Log("Distance from target currently is: " + distanceFromTarget);
 
         int maxScore = 0;
 
@@ -75,8 +76,8 @@ public class AttackState : State
         {
             EnemyAttackAction enemyAttackAction = enemyAttacks[i];
 
-            if (enemyManager.distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
-                && enemyManager.distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
+            if (distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
+                && distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
             {
                 Debug.Log("Enemy in Distance!");
                 if (viewableAngle <= enemyAttackAction.maximumAttackAngle
@@ -95,8 +96,8 @@ public class AttackState : State
         {
             EnemyAttackAction enemyAttackAction = enemyAttacks[i];
 
-            if (enemyManager.distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
-                && enemyManager.distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
+            if (distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
+                && distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
             {
                 if (viewableAngle <= enemyAttackAction.maximumAttackAngle
                     && viewableAngle >= enemyAttackAction.minimumAttackAngle)
