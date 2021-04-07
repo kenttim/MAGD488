@@ -1,24 +1,30 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.AI;
 public class Enemy_Manager : CharacterManager
 {
 
     EnemyLocomotionManager enemyLocomotionManager;
     EnemyAnimatorManager enemyAnimationManager;
     Enemy_Stats enemyStats;
-    
+    public NavMeshAgent navMeshAgent;
+    public Rigidbody enemyRigidBody;
+
     public State currentState;
     public CharacterStats currentTarget;
 
     public bool isPerformingAction;
+    public float distanceFromTarget;
+    public float rotationSpeed = 20f;
+    public float maximumAttackRange = 8.5f;
 
     [Header("A.I. Settings")]
     public float detectionRadius = 20;
     //the higher the maximum and lower the minimum the greater the fov becomes
     public float maximumDetectionAngle = 50;
     public float minimumDetectionAngle = -50;
+    public float viewableAngle;
 
     public float currentRecoveryTime = 0;
 
@@ -27,6 +33,14 @@ public class Enemy_Manager : CharacterManager
         enemyLocomotionManager = GetComponent<EnemyLocomotionManager>();
         enemyAnimationManager = GetComponentInChildren<EnemyAnimatorManager>();
         enemyStats = GetComponent<Enemy_Stats>();
+        navMeshAgent = GetComponentInChildren<NavMeshAgent>();
+        enemyRigidBody = GetComponent<Rigidbody>();
+        navMeshAgent.enabled = false;
+    }
+
+    private void Start()
+    {
+        enemyRigidBody.isKinematic = false;
     }
 
     private void Update()
@@ -73,82 +87,6 @@ public class Enemy_Manager : CharacterManager
         }
     }
 
-    #region Attacks
-    private void AttackTarget()
-    {
-        //if (isPerformingAction)
-        //{
-        //    Debug.Log("Performing Action!");
-        //    return;
-        //}
-           
-
-        //if(currentAttack == null)
-        //{
-        //    GetNewAttack();
-        //    Debug.Log("Getting Attack!");
-        //} else
-        //{
-        //    Debug.Log("Attacking!");
-        //    isPerformingAction = true;
-        //    currentRecoveryTime = currentAttack.recoveryTime;
-        //    enemyAnimationManager.PlayTargetAnimation(currentAttack.actionAnimation, true);
-        //    currentAttack = null;
-        //}
-    }
-    private void GetNewAttack()
-    {
-        //Vector3 targetsDirection = enemyLocomotionManager.currentTarget.transform.position - transform.position;
-        //float viewableAngle = Vector3.Angle(targetsDirection, transform.forward);
-        //enemyLocomotionManager.distanceFromTarget = Vector3.Distance(enemyLocomotionManager.currentTarget.transform.position, transform.position);
-        //Debug.Log("Distance from target currently is: " + enemyLocomotionManager.distanceFromTarget);
-        
-        //int maxScore = 0;
-
-        //for(int i =0; i < enemyAttacks.Length; i++)
-        //{
-        //    EnemyAttackAction enemyAttackAction = enemyAttacks[i];
-
-        //    if(enemyLocomotionManager.distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
-        //        && enemyLocomotionManager.distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
-        //    {
-        //        Debug.Log("Enemy in Distance!");
-        //        if(viewableAngle <= enemyAttackAction.maximumAttackAngle 
-        //            && viewableAngle >= enemyAttackAction.minimumAttackAngle)
-        //        {
-        //            Debug.Log("Grabbed Max Score!");
-        //            maxScore += enemyAttackAction.attackScore;
-        //        }
-        //    } 
-        //}
-
-        //int randomValue = Random.Range(0, maxScore);
-        //int temporaryScore = 0;
-
-        //for (int i = 0; i < enemyAttacks.Length; i++)
-        //{
-        //    EnemyAttackAction enemyAttackAction = enemyAttacks[i];
-
-        //    if (enemyLocomotionManager.distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
-        //        && enemyLocomotionManager.distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
-        //    {
-        //        if (viewableAngle <= enemyAttackAction.maximumAttackAngle
-        //            && viewableAngle >= enemyAttackAction.minimumAttackAngle)
-        //        {
-        //            if (currentAttack != null)
-        //                return;
-
-        //            temporaryScore += enemyAttackAction.attackScore;
-
-        //            if(temporaryScore > randomValue)
-        //            {
-        //                currentAttack = enemyAttackAction;
-        //            }
-        //        }
-        //    }
-        //}
-    }
-    #endregion
-
+   
 
 }

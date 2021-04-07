@@ -306,12 +306,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 0}
-  currentState: {fileID: 0}
+  navMeshAgent: {fileID: 0}
+  enemyRigidBody: {fileID: 0}
+  currentState: {fileID: 1913159057}
   currentTarget: {fileID: 0}
   isPerformingAction: 0
+  distanceFromTarget: 0
+  rotationSpeed: 20
+  maximumAttackRange: 8.5
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
+  viewableAngle: 0
   currentRecoveryTime: 0
 --- !u!114 &496965214
 MonoBehaviour:
@@ -325,10 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8022f7873a7e56a4ab8cdda7a8315ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRigidBody: {fileID: 0}
-  distanceFromTarget: 0
-  stoppingDistance: 8
-  rotationSpeed: 20
 --- !u!1 &510739067
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,6 +374,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2a88c9844c75e499e4d77e82db5367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatStanceState: {fileID: 1382441372}
+  enemyAttacks:
+  - {fileID: 11400000, guid: 1acceb89330ff814cab7dde953c2e2ef, type: 2}
+  - {fileID: 11400000, guid: eee21c3010010ac468b06c2b6849a163, type: 2}
+  currentAttack: {fileID: 0}
 --- !u!1 &758621353
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +912,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49a2cd8af49b784aaa38480574ef568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackState: {fileID: 510739069}
+  pursueTargetState: {fileID: 1841101955}
 --- !u!1 &1841101953
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69b47c7bfeab4164bbe33f955773bd0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  combatStanceState: {fileID: 1382441372}
 --- !u!1 &1913159055
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc5df6bbbb9417b439c7fd1e5dccc2db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pursueTargetState: {fileID: 0}
+  pursueTargetState: {fileID: 1841101955}
   detectionLayer:
     serializedVersion: 2
     m_Bits: 2048

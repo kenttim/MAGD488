@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class CombatStanceState : State
 {
+    public AttackState attackState;
+    public PursueTargetState pursueTargetState;
     public override State Tick(Enemy_Manager enemyManager, Enemy_Stats enemyStats, EnemyAnimatorManager enemyAnimatorManager)
     {
-        //check for attack range
-        //potentially circle the player or walk around them
-        //if in attack range return attack state
-        //if we are in a cool down after attacking , return this state and continue circling player
-        //if the player runs out of range return the pursue target state
-        return this;
-    }
+        enemyManager.distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
 
-   
+
+        //check for attack range
+
+        if (enemyManager.currentRecoveryTime <=0 && enemyManager.distanceFromTarget <= enemyManager.maximumAttackRange)
+        {
+            return attackState;
+        } else if(enemyManager.distanceFromTarget > enemyManager.maximumAttackRange)
+        {
+            return pursueTargetState;
+        } else
+        {
+            return this;
+        }
+        //potentially circle the player or walk around them
+    }
 }
