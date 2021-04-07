@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4803169145925845492}
   - component: {fileID: 4019526200738820692}
   - component: {fileID: 37750539440252271}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: Character Collider Blocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2080,7 +2080,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 3
-  m_Height: 12.83
+  m_Height: 18
   m_Direction: 1
   m_Center: {x: 0, y: 9, z: 0}
 --- !u!114 &2946879846723708459
