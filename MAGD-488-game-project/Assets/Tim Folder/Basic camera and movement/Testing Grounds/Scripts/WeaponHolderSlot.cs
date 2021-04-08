@@ -23,7 +23,7 @@ public class WeaponHolderSlot : MonoBehaviour
     {
         if(currentWeaponModel != null)
         {
-            Destroy(currentWeaponModel);
+            //Destroy(currentWeaponModel);
         }
     }
 

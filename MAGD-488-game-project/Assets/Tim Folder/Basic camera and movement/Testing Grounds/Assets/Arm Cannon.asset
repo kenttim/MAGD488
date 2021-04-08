@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 0}
   itemName: Arm Cannon
-  modelPrefab: {fileID: 8553540772098126169, guid: 277eb3c25fa27374c9a3b90df8209dad,
+  modelPrefab: {fileID: 7858839394634696990, guid: 76391d0524212ad41864fde8c33d0921,
     type: 3}
   isUnarmed: 0
   L_Attack_1: 
   H_Attack_1: 
-  R_Attack: 
+  R_Attack: Cast Spell
   baseStamina: 0
   lightAttackMultiplier: 0
   heavyAttackMultiplier: 0
+  isRanged: 1
+  isMelee: 0

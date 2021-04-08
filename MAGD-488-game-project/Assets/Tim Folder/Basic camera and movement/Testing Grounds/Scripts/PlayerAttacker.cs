@@ -7,12 +7,16 @@ public class PlayerAttacker : MonoBehaviour
     AnimatorHandler animatorHandler;
     WeaponSlotManager weaponSlotManager;
     PlayerManager playerManager;
+    InputHandler inputHandler;
+    PlayerInventory playerInventory;
 
     private void Awake()
     {
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
-        weaponSlotManager = GetComponentInChildren<WeaponSlotManager>();
-        playerManager = GetComponent<PlayerManager>();
+        weaponSlotManager = GetComponent<WeaponSlotManager>();
+        playerManager = GetComponentInParent<PlayerManager>();
+        inputHandler = GetComponent<InputHandler>();
+        playerInventory = GetComponentInParent<PlayerInventory>();
     }
 
     public void HandleLightMeleeAttack(WeaponItem weapon)
@@ -37,15 +41,25 @@ public class PlayerAttacker : MonoBehaviour
         animatorHandler.PlayTargetAnimation(weapon.H_Attack_1, true);
     }
 
-    public void HandleRangeAttack(WeaponItem weapon)
+    public void HandleRangeAttack()
     {
         if (playerManager.isInteracting)
         {
             return;
         }
+        if (playerInventory.rightWeapon.isRanged)
+        {
+            PerformMagicAction(playerInventory.rightWeapon);
+        }
 
-        weaponSlotManager.attackingWeapon = weapon;
-        animatorHandler.PlayTargetAnimation(weapon.R_Attack, true);
+        //animatorHandler.anim.SetBool("Cast Spell", true);
+    }
 
+    private void PerformMagicAction(WeaponItem weapon)
+    {
+        if (weapon.isRanged)
+        {
+            
+        }
     }
 }

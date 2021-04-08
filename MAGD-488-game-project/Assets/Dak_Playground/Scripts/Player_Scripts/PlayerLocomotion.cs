@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerLocomotion : MonoBehaviour
 {
+    CameraHandler cameraHandler;
     PlayerManager playerManager; // fall stuff
     Transform cameraObject;
     InputHandler inputHandler;
@@ -37,7 +38,10 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     float fallSpeed = 45; // fall stuff
 
-    
+    private void Awake()
+    {
+        cameraHandler = FindObjectOfType<CameraHandler>();
+    }
 
     private void Start()
     {
@@ -60,23 +64,60 @@ public class PlayerLocomotion : MonoBehaviour
 
     private void HandleRotation(float delta)
     {
-        Vector3 targetDir = Vector3.zero;
-        float moveOverride = inputHandler.moveAmount;
+        if (inputHandler.lockOnFlag)
+        {
+            if(inputHandler.sprintFlag || inputHandler.rollFlag)
+            {
+                Vector3 targetDirection = Vector3.zero;
+                targetDirection = cameraHandler.cameraTransform.forward * inputHandler.vertical;
+                targetDirection += cameraHandler.cameraTransform.right * inputHandler.horizontal;
+                targetDirection.Normalize();
+                targetDirection.y = 0;
 
-        targetDir = cameraObject.forward * inputHandler.vertical;
-        targetDir += cameraObject.right * inputHandler.horizontal;
+                if (targetDirection == Vector3.zero)
+                {
+                    targetDirection = transform.forward;
+                }
 
-        targetDir.Normalize();
-        targetDir.y = 0;
+                Quaternion tr = Quaternion.LookRotation(targetDirection);
+                Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
 
-        if (targetDir == Vector3.zero)
-            targetDir = myTransform.forward;
+                transform.rotation = targetRotation;
 
-        float rs = rotationSpeed;
-        Quaternion tr = Quaternion.LookRotation(targetDir);
-        Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
+            }
+            else
+            {
+                Vector3 rotationDirection = moveDirection;
+                rotationDirection = cameraHandler.currentLockOnTarget.position - transform.position;
+                rotationDirection.y = 0;
+                rotationDirection.Normalize();
+                Quaternion tr = Quaternion.LookRotation(rotationDirection);
+                Quaternion targetRotation = Quaternion.Slerp(transform.rotation, tr, rotationSpeed * Time.deltaTime);
+                transform.rotation = targetRotation;
+            }
+          
+        }
+        else
+        {
+            Vector3 targetDir = Vector3.zero;
+            float moveOverride = inputHandler.moveAmount;
 
-        myTransform.rotation = targetRotation;
+            targetDir = cameraObject.forward * inputHandler.vertical;
+            targetDir += cameraObject.right * inputHandler.horizontal;
+
+            targetDir.Normalize();
+            targetDir.y = 0;
+
+            if (targetDir == Vector3.zero)
+                targetDir = myTransform.forward;
+
+            float rs = rotationSpeed;
+            Quaternion tr = Quaternion.LookRotation(targetDir);
+            Quaternion targetRotation = Quaternion.Slerp(myTransform.rotation, tr, rs * delta);
+
+            myTransform.rotation = targetRotation;
+        }
+
     }
 
     public void HandleMovement(float delta)

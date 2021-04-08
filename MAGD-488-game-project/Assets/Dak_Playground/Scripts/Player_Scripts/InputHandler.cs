@@ -24,15 +24,16 @@ public class InputHandler : MonoBehaviour
     public bool lockOnFlag;
     public bool lockOnInput;
 
-    /*
+    
     public float clickTimer; //attack stuff
     public bool holdClickFlag; //attack stuff
-    public bool lightAttackFlag; //attack stuff
-    public bool heavyAttackFlag; //attack stuff
-    */
+    
 
     public float rollInputTimer; //sprinting stuff
     public bool sprintFlag; //sprinting stuff
+
+    public bool right_Arrow_Input;
+    public bool left_Arrow_Input;
 
     PlayerControls inputActions;
     PlayerAttacker playerAttacker;
@@ -45,7 +46,7 @@ public class InputHandler : MonoBehaviour
 
     private void Awake()
     {
-        playerAttacker = GetComponent<PlayerAttacker>();
+        playerAttacker = GetComponentInChildren<PlayerAttacker>();
         playerInventory = GetComponent<PlayerInventory>();
         playerStats = GetComponent<PlayerStats>();
         cameraHandler = FindObjectOfType<CameraHandler>();
@@ -64,6 +65,8 @@ public class InputHandler : MonoBehaviour
             inputActions.PlayerActions.Jump.performed += i => jump_input = true;
             inputActions.PlayerActions.Interact.performed += i => interact_input = true;
             inputActions.PlayerActions.LockOn.performed += i => lockOnInput = true;
+            inputActions.PlayerMovement.LockOnTargetRight.performed += i => right_Arrow_Input = true;
+            inputActions.PlayerMovement.LockOnTargetLeft.performed += i => left_Arrow_Input = true;
         }
 
         inputActions.Enable();
@@ -113,7 +116,7 @@ public class InputHandler : MonoBehaviour
 
     private void HandleAttackInput(float delta) //attack stuff
     {
-        
+        /*
         if (left_click)
         {
             int lightAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.leftWeapon.baseStamina * playerInventory.leftWeapon.lightAttackMultiplier);
@@ -130,50 +133,57 @@ public class InputHandler : MonoBehaviour
         
         if (right_click)
         {
-            int heavyAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.rightWeapon.baseStamina * playerInventory.rightWeapon.heavyAttackMultiplier);
+            int heavyAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.leftWeapon.baseStamina * playerInventory.leftWeapon.heavyAttackMultiplier);
             
             if (playerStats.currentStamina >= heavyAttackStaminaMinimum)
             {
-                playerAttacker.HandleHeavyMeleeAttack(playerInventory.rightWeapon);
+                playerAttacker.HandleHeavyMeleeAttack(playerInventory.leftWeapon);
             }
             else
             {
                 Debug.Log("Out of stamina");
             }
         }
-     
+     */
 
-
-        /*
         left_click = inputActions.PlayerActions.LeftClick.phase == UnityEngine.InputSystem.InputActionPhase.Started;
-        while(left_click)
+        if(left_click)
         {
             clickTimer += delta;
         }
         if (clickTimer > 0 && clickTimer < 0.5f && left_click == false)
         {
-            lightAttackFlag = true;
+            int lightAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.leftWeapon.baseStamina * playerInventory.leftWeapon.lightAttackMultiplier);
             clickTimer = 0;
+
+            if (playerStats.currentStamina >= lightAttackStaminaMinimum)
+            {
+                playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
+            }
+            else
+            {
+                Debug.Log("Out of stamina");
+            }
+
         } else if (clickTimer > 0.5f && left_click == false)
         {
-            heavyAttackFlag = true;
+            int heavyAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.leftWeapon.baseStamina * playerInventory.leftWeapon.heavyAttackMultiplier);
             clickTimer = 0;
+
+            if (playerStats.currentStamina >= heavyAttackStaminaMinimum)
+            {
+                playerAttacker.HandleHeavyMeleeAttack(playerInventory.leftWeapon);
+            }
+            else
+            {
+                Debug.Log("Out of stamina");
+            }
         }
 
-
-        if (lightAttackFlag == true)
+        if (right_click)
         {
-            playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
-            lightAttackFlag = false;
-            heavyAttackFlag = false;
+            playerAttacker.HandleRangeAttack();
         }
-
-        if (heavyAttackFlag == true)
-        {
-            playerAttacker.HandleHeavyMeleeAttack(playerInventory.leftWeapon);
-            lightAttackFlag = false;
-            heavyAttackFlag = false;
-        }*/
 
     }
 
@@ -198,9 +208,29 @@ public class InputHandler : MonoBehaviour
             lockOnFlag = false;
             cameraHandler.ClearLockOnTargets();
         }
+
+        if(lockOnFlag && left_Arrow_Input)
+        {
+            left_Arrow_Input = false;
+            cameraHandler.HandleLockOn();
+            if(cameraHandler.leftLockTarget != null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.leftLockTarget;
+            }
+        }
+        if(lockOnFlag && right_Arrow_Input)
+        {
+            right_Arrow_Input = false;
+            cameraHandler.HandleLockOn();
+            if (cameraHandler.rightLockTarget != null)
+            {
+                cameraHandler.currentLockOnTarget = cameraHandler.rightLockTarget;
+            }
+
+        }
+
+        cameraHandler.SetCameraHeight();
     }
-
-
 }
 
 

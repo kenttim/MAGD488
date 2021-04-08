@@ -21,4 +21,8 @@ public class WeaponItem : Items
     public int baseStamina;
     public float lightAttackMultiplier;
     public float heavyAttackMultiplier;
+
+    [Header("Weapon Type")]
+    public bool isRanged;
+    public bool isMelee;
 }
