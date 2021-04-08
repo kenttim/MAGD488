@@ -40,6 +40,7 @@ public class InputHandler : MonoBehaviour
     PlayerInventory playerInventory;
     CameraHandler cameraHandler;
     PlayerStats playerStats;
+    AnimatorHandler animatorHandler;
 
     Vector2 movementInput;
     Vector2 cameraInput;
@@ -50,6 +51,7 @@ public class InputHandler : MonoBehaviour
         playerInventory = GetComponent<PlayerInventory>();
         playerStats = GetComponent<PlayerStats>();
         cameraHandler = FindObjectOfType<CameraHandler>();
+        animatorHandler = GetComponentInChildren<AnimatorHandler>();
     }
 
     public void OnEnable()
@@ -147,6 +149,7 @@ public class InputHandler : MonoBehaviour
      */
 
         left_click = inputActions.PlayerActions.LeftClick.phase == UnityEngine.InputSystem.InputActionPhase.Started;
+
         if(left_click)
         {
             clickTimer += delta;
@@ -158,7 +161,9 @@ public class InputHandler : MonoBehaviour
 
             if (playerStats.currentStamina >= lightAttackStaminaMinimum)
             {
+                animatorHandler.anim.SetBool("isUsingLeftHand", true);
                 playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
+                
             }
             else
             {
@@ -172,17 +177,21 @@ public class InputHandler : MonoBehaviour
 
             if (playerStats.currentStamina >= heavyAttackStaminaMinimum)
             {
+                animatorHandler.anim.SetBool("isUsingLeftHand", true);
                 playerAttacker.HandleHeavyMeleeAttack(playerInventory.leftWeapon);
+               
             }
             else
             {
                 Debug.Log("Out of stamina");
             }
+
         }
 
         if (right_click)
         {
             playerAttacker.HandleRangeAttack();
+            //animatorHandler.anim.SetBool("isUsingRightHand", true);
         }
 
     }

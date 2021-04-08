@@ -20,6 +20,8 @@ public class PlayerManager : CharacterManager
     public bool isGrounded; // fall stuff
     public bool isInteracting; //dodge stuff
     public bool isSprinting; //sprinting stuff
+    public bool isUsingRightHand; //weapon stuff
+    public bool isUsingLeftHand; //weapon stuff
 
     private void Awake()
     {
@@ -39,8 +41,10 @@ public class PlayerManager : CharacterManager
     {
         float delta = Time.deltaTime;
         isInteracting = anim.GetBool("isInteracting"); //restructure error for later
+        isUsingRightHand = anim.GetBool("isUsingRightHand"); // both are for weapon stuff
+        isUsingLeftHand = anim.GetBool("isUsingLeftHand");
         anim.SetBool("isInAir", isInAir); // jump stuff
-        
+      
 
         inputHandler.TickInput(delta);
         playerLocomotion.HandleRollAndSprint(delta);  //dodge stuff

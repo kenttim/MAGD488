@@ -9,6 +9,9 @@ public class WeaponHolderSlot : MonoBehaviour
     public bool isLeftHandSlot;
     public bool isRightHandSlot;
 
+    //added this bc it was missing?
+    public WeaponItem currentWeapon;
+
     public GameObject currentWeaponModel;
 
     public void UnloadWeapon()

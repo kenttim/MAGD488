@@ -13,7 +13,8 @@ public class AttackState : State
         Vector3 targetDirection = enemyManager.currentTarget.transform.position - transform.position;
         float viewableAngle = Vector3.Angle(targetDirection, transform.forward);
         float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, enemyManager.transform.position);
-   
+
+        HandleRotationTowardsTarget(enemyManager);
         //select one of our many attacks
         //if the selected attack is not able to be used because of bad angle or distance, select a new attack
         //if the attack is viable, stop our movement and attack the target
@@ -68,7 +69,7 @@ public class AttackState : State
         Vector3 targetsDirection = enemyManager.currentTarget.transform.position - transform.position;
         float viewableAngle = Vector3.Angle(targetsDirection, transform.forward);
         float distanceFromTarget = Vector3.Distance(enemyManager.currentTarget.transform.position, transform.position);
-        Debug.Log("Distance from target currently is: " + distanceFromTarget);
+        //Debug.Log("Distance from target currently is: " + distanceFromTarget);
 
         int maxScore = 0;
 
@@ -79,11 +80,11 @@ public class AttackState : State
             if (distanceFromTarget <= enemyAttackAction.maximumDistanceNeededToAttack
                 && distanceFromTarget >= enemyAttackAction.minimumDistanceNeededToAttack)
             {
-                Debug.Log("Enemy in Distance!");
+                //Debug.Log("Enemy in Distance!");
                 if (viewableAngle <= enemyAttackAction.maximumAttackAngle
                     && viewableAngle >= enemyAttackAction.minimumAttackAngle)
                 {
-                    Debug.Log("Grabbed Max Score!");
+                    //Debug.Log("Grabbed Max Score!");
                     maxScore += enemyAttackAction.attackScore;
                 }
             }
@@ -116,4 +117,34 @@ public class AttackState : State
         }
     }
     #endregion
+
+    private void HandleRotationTowardsTarget(Enemy_Manager enemyManager)
+    {
+        //rotate manually
+        if (enemyManager.isPerformingAction)
+        {
+            Vector3 direction = enemyManager.currentTarget.transform.position - transform.position;
+            direction.y = 0;
+            direction.Normalize();
+
+            if (direction == Vector3.zero)
+            {
+                direction = transform.forward;
+            }
+
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            enemyManager.transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, enemyManager.rotationSpeed / Time.deltaTime);
+        }
+        //rotate w/ pathfinding
+        else
+        {
+            Vector3 relativeDirection = transform.InverseTransformDirection(enemyManager.navMeshAgent.desiredVelocity);
+            Vector3 targetVelocity = enemyManager.enemyRigidBody.velocity;
+
+            enemyManager.navMeshAgent.enabled = true;
+            enemyManager.navMeshAgent.SetDestination(enemyManager.currentTarget.transform.position);
+            enemyManager.enemyRigidBody.velocity = targetVelocity;
+            enemyManager.transform.rotation = Quaternion.Slerp(enemyManager.transform.rotation, enemyManager.navMeshAgent.transform.rotation, enemyManager.rotationSpeed / Time.deltaTime);
+        }
+    }
 }

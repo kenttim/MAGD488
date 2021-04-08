@@ -46,8 +46,8 @@ MonoBehaviour:
   parentOverride: {fileID: 8830849917473565509}
   isLeftHandSlot: 0
   isRightHandSlot: 1
-  currentWeaponModel: {fileID: 7458835721797126856, guid: 10a753ab5c497d545bd9b11478fdfd01,
-    type: 3}
+  currentWeapon: {fileID: 0}
+  currentWeaponModel: {fileID: 0}
 --- !u!1 &1688401899407633406
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 4803169145925845492}
   - component: {fileID: 4019526200738820692}
   - component: {fileID: 37750539440252271}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Character Collider Blocker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,6 +186,7 @@ MonoBehaviour:
   parentOverride: {fileID: 3115980476590696258}
   isLeftHandSlot: 1
   isRightHandSlot: 0
+  currentWeapon: {fileID: 0}
   currentWeaponModel: {fileID: 7458835721797126856, guid: 10a753ab5c497d545bd9b11478fdfd01,
     type: 3}
 --- !u!1 &7301521229412994522
@@ -1976,7 +1977,7 @@ GameObject:
   - component: {fileID: 2946879846723708459}
   - component: {fileID: 8036378540901209058}
   - component: {fileID: 802166132}
-  m_Layer: 11
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2056,6 +2057,8 @@ MonoBehaviour:
   sprintSpeed: 35
   rotationSpeed: 10
   fallSpeed: 455
+  characterCollider: {fileID: 8308309236601920984}
+  characterCollisionBlockerCollider: {fileID: 37750539440252271}
 --- !u!54 &8308309236601920985
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2106,6 +2109,8 @@ MonoBehaviour:
   isGrounded: 0
   isInteracting: 0
   isSprinting: 0
+  isUsingRightHand: 0
+  isUsingLeftHand: 0
 --- !u!114 &8036378540901209058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2125,6 +2130,7 @@ MonoBehaviour:
   maxStamina: 0
   currentStamina: 0
   staminaTimer: 0
+  isDead: 0
 --- !u!114 &802166132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3485,6 +3491,7 @@ GameObject:
   - component: {fileID: 8308309237276779065}
   - component: {fileID: 8308309237276779064}
   - component: {fileID: 5616430351507847431}
+  - component: {fileID: 1125678067}
   m_Layer: 0
   m_Name: LowPolyMan
   m_TagString: Untagged
@@ -3566,6 +3573,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackingWeapon: {fileID: 0}
+--- !u!114 &1125678067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8308309237276779070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621a00375a58b21449cfd0f146edfa70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8308309237310395874
 GameObject:
   m_ObjectHideFlags: 0

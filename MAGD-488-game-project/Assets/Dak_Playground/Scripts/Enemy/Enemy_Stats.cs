@@ -24,6 +24,11 @@ public class Enemy_Stats : CharacterStats
 
     public void TakeDamage(int damage)
     {
+        if (isDead)
+        {
+            return;
+        }
+
         currentHealth = currentHealth - damage;
 
         animator.Play("Take Damage");
@@ -32,6 +37,7 @@ public class Enemy_Stats : CharacterStats
         {
             currentHealth = 0;
             animator.Play("Death");
+            isDead = true;
             //handle player death
         }
     }

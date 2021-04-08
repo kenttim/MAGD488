@@ -14,6 +14,8 @@ public class CharacterStats : MonoBehaviour
 
     public int staminaTimer = 0;
 
+    public bool isDead;
+
     void Start()
     {
         

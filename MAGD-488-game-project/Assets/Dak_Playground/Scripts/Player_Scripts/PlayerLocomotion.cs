@@ -38,6 +38,9 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField]
     float fallSpeed = 45; // fall stuff
 
+    public CapsuleCollider characterCollider;
+    public CapsuleCollider characterCollisionBlockerCollider;
+
     private void Awake()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
@@ -55,6 +58,8 @@ public class PlayerLocomotion : MonoBehaviour
 
         playerManager.isGrounded = true; // fall stuff
         ignoreForGroundCheck = ~(1 << 9 | 1 << 11);
+
+        Physics.IgnoreCollision(characterCollider, characterCollisionBlockerCollider);
     }
 
     #region Movement
