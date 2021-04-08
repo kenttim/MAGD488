@@ -1975,7 +1975,6 @@ GameObject:
   - component: {fileID: 8308309236601920984}
   - component: {fileID: 2946879846723708459}
   - component: {fileID: 8036378540901209058}
-  - component: {fileID: 2187680392095199475}
   - component: {fileID: 802166132}
   m_Layer: 11
   m_Name: Player
@@ -2026,8 +2025,12 @@ MonoBehaviour:
   interact_input: 0
   lockOnFlag: 0
   lockOnInput: 0
+  clickTimer: 0
+  holdClickFlag: 0
   rollInputTimer: 0
   sprintFlag: 0
+  right_Arrow_Input: 0
+  left_Arrow_Input: 0
 --- !u!114 &8308309236601920986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2095,7 +2098,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39b53399c9f569d499144e6dfcf13fc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockOnTransform: {fileID: 0}
+  lockOnTransform: {fileID: 5386735753664795638}
   interactableUIGameObject: {fileID: 0}
   itemInteractableGameObject: {fileID: 0}
   rollFlag: 0
@@ -2122,18 +2125,6 @@ MonoBehaviour:
   maxStamina: 0
   currentStamina: 0
   staminaTimer: 0
---- !u!114 &2187680392095199475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8308309236601920991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 621a00375a58b21449cfd0f146edfa70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &802166132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2147,7 +2138,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leftWeapon: {fileID: 11400000, guid: a46f5a8eb694f214188da549e98311e9, type: 2}
-  rightWeapon: {fileID: 11400000, guid: a46f5a8eb694f214188da549e98311e9, type: 2}
+  rightWeapon: {fileID: 11400000, guid: a77bf412fe1c9bd4c849c9e163d95f5f, type: 2}
   weaponsInventory: []
 --- !u!1 &8308309236603880111
 GameObject:

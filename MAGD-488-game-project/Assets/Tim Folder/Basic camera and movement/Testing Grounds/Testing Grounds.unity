@@ -250,11 +250,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 802166132, guid: 920f1e4ad0529dc4fab07bc87316de03, type: 3}
-      propertyPath: rightWeapon
-      value: 
-      objectReference: {fileID: 11400000, guid: a77bf412fe1c9bd4c849c9e163d95f5f,
-        type: 2}
-    - target: {fileID: 802166132, guid: 920f1e4ad0529dc4fab07bc87316de03, type: 3}
       propertyPath: weaponsInventory.Array.size
       value: 0
       objectReference: {fileID: 0}
@@ -264,11 +259,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8553540772098126169, guid: 277eb3c25fa27374c9a3b90df8209dad,
         type: 3}
-    - target: {fileID: 2946879846723708459, guid: 920f1e4ad0529dc4fab07bc87316de03,
-        type: 3}
-      propertyPath: lockOnTransform
-      value: 
-      objectReference: {fileID: 900146692}
     - target: {fileID: 2946879846723708459, guid: 920f1e4ad0529dc4fab07bc87316de03,
         type: 3}
       propertyPath: interactableUIGameObject
@@ -349,8 +339,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2187680392095199475, guid: 920f1e4ad0529dc4fab07bc87316de03, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 920f1e4ad0529dc4fab07bc87316de03, type: 3}
 --- !u!4 &36445155 stripped
 Transform:
@@ -1367,9 +1356,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1750968798}
+  navMeshAgent: {fileID: 0}
+  enemyRigidBody: {fileID: 0}
   currentState: {fileID: 0}
   currentTarget: {fileID: 0}
   isPerformingAction: 0
+  isInteracting: 0
+  rotationSpeed: 20
+  maximumAttackRange: 8.5
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
@@ -1386,10 +1380,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8022f7873a7e56a4ab8cdda7a8315ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRigidBody: {fileID: 0}
-  distanceFromTarget: 0
-  stoppingDistance: 8
-  rotationSpeed: 20
 --- !u!136 &195764058
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20408,12 +20398,6 @@ Transform:
   m_Father: {fileID: 1685778024}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &900146692 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5386735753664795638, guid: 920f1e4ad0529dc4fab07bc87316de03,
-    type: 3}
-  m_PrefabInstance: {fileID: 36445154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &905604964
 GameObject:
   m_ObjectHideFlags: 0
@@ -24685,7 +24669,7 @@ GameObject:
   - component: {fileID: 1698983257}
   - component: {fileID: 1698983256}
   - component: {fileID: 1698983255}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25474,9 +25458,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 1072663059}
+  navMeshAgent: {fileID: 0}
+  enemyRigidBody: {fileID: 0}
   currentState: {fileID: 0}
   currentTarget: {fileID: 0}
   isPerformingAction: 0
+  isInteracting: 0
+  rotationSpeed: 20
+  maximumAttackRange: 8.5
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
@@ -25493,10 +25482,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8022f7873a7e56a4ab8cdda7a8315ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRigidBody: {fileID: 0}
-  distanceFromTarget: 0
-  stoppingDistance: 8
-  rotationSpeed: 20
 --- !u!136 &1882500676
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -29660,9 +29645,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lockOnTransform: {fileID: 878399444}
+  navMeshAgent: {fileID: 0}
+  enemyRigidBody: {fileID: 0}
   currentState: {fileID: 0}
   currentTarget: {fileID: 0}
   isPerformingAction: 0
+  isInteracting: 0
+  rotationSpeed: 20
+  maximumAttackRange: 8.5
   detectionRadius: 20
   maximumDetectionAngle: 50
   minimumDetectionAngle: -50
@@ -29679,10 +29669,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8022f7873a7e56a4ab8cdda7a8315ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyRigidBody: {fileID: 0}
-  distanceFromTarget: 0
-  stoppingDistance: 8
-  rotationSpeed: 20
 --- !u!136 &2082598395
 CapsuleCollider:
   m_ObjectHideFlags: 0
