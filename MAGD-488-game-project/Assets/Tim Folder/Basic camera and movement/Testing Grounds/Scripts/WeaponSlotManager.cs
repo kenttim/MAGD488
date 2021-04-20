@@ -5,8 +5,8 @@ using UnityEngine;
 public class WeaponSlotManager : MonoBehaviour
 {
     PlayerManager playerManager;
-    WeaponHolderSlot leftHandSlot;
-    WeaponHolderSlot rightHandSlot;
+    public WeaponHolderSlot leftHandSlot;
+    public WeaponHolderSlot rightHandSlot;
 
     DamageCollider leftHandDamageCollider;
     DamageCollider rightHandDamageCollider;
@@ -41,12 +41,21 @@ public class WeaponSlotManager : MonoBehaviour
             leftHandSlot.currentWeapon = weaponItem;
             leftHandSlot.LoadWeaponModel(weaponItem);
             LoadLeftWeaponDamageCollider();
-        } 
-        else {
-            rightHandSlot.currentWeapon = weaponItem;
-            rightHandSlot.LoadWeaponModel(weaponItem);
-            LoadRightWeaponDamageCollider();
         }
+        else {
+            if (weaponItem.isRanged)
+            {
+                rightHandSlot.currentWeapon = weaponItem;
+            }
+            else
+            {
+                rightHandSlot.currentWeapon = weaponItem;
+                rightHandSlot.LoadWeaponModel(weaponItem);
+                LoadRightWeaponDamageCollider();
+            }
+   
+        }
+        
     }
 
     #region Handle Weapon's Damage Collider
@@ -76,7 +85,12 @@ public class WeaponSlotManager : MonoBehaviour
     public void CloseDamageCollider()
     {
         leftHandDamageCollider.DisableDamageCollider();
-        //rightHandDamageCollider.DisableDamageCollider();
+        rightHandDamageCollider.DisableDamageCollider();
+    }
+
+    public void ShootProjectile()
+    {
+        
     }
 
     #endregion

@@ -16,14 +16,8 @@ public class CharacterStats : MonoBehaviour
 
     public bool isDead;
 
-    void Start()
+    public virtual void TakeDamage(int damage, string damageAnimation = "Take Damage")
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

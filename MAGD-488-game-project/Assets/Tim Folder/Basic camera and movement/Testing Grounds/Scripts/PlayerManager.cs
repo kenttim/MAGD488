@@ -44,6 +44,7 @@ public class PlayerManager : CharacterManager
         isUsingRightHand = anim.GetBool("isUsingRightHand"); // both are for weapon stuff
         isUsingLeftHand = anim.GetBool("isUsingLeftHand");
         anim.SetBool("isInAir", isInAir); // jump stuff
+        isFiring = anim.GetBool("isFiring");
       
 
         inputHandler.TickInput(delta);

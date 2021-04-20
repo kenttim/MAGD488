@@ -5,4 +5,7 @@ using UnityEngine;
 public class CharacterManager : MonoBehaviour
 {
     public Transform lockOnTransform;
+
+    [Header("Shoot Flag")]
+    public bool isFiring;
 }

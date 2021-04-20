@@ -22,7 +22,7 @@ public class Enemy_Stats : CharacterStats
         return maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage, string damageAnimation = "Take Damage")
     {
         if (isDead)
         {

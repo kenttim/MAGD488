@@ -118,36 +118,6 @@ public class InputHandler : MonoBehaviour
 
     private void HandleAttackInput(float delta) //attack stuff
     {
-        /*
-        if (left_click)
-        {
-            int lightAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.leftWeapon.baseStamina * playerInventory.leftWeapon.lightAttackMultiplier);
-            
-            if(playerStats.currentStamina >= lightAttackStaminaMinimum)
-            {
-                playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
-            }
-            else
-            {
-                Debug.Log("Out of stamina");
-            }    
-        } 
-        
-        if (right_click)
-        {
-            int heavyAttackStaminaMinimum = Mathf.RoundToInt(playerInventory.leftWeapon.baseStamina * playerInventory.leftWeapon.heavyAttackMultiplier);
-            
-            if (playerStats.currentStamina >= heavyAttackStaminaMinimum)
-            {
-                playerAttacker.HandleHeavyMeleeAttack(playerInventory.leftWeapon);
-            }
-            else
-            {
-                Debug.Log("Out of stamina");
-            }
-        }
-     */
-
         left_click = inputActions.PlayerActions.LeftClick.phase == UnityEngine.InputSystem.InputActionPhase.Started;
 
         if(left_click)

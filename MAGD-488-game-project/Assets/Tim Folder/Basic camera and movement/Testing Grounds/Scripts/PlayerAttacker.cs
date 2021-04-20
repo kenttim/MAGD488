@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class PlayerAttacker : MonoBehaviour
 {
+    CameraHandler cameraHandler;
     AnimatorHandler animatorHandler;
     WeaponSlotManager weaponSlotManager;
     PlayerManager playerManager;
     InputHandler inputHandler;
     PlayerInventory playerInventory;
+    PlayerStats playerStats;
+    
+
+    public float projectileSpeed = 10f;
 
     private void Awake()
     {
+        cameraHandler = FindObjectOfType<CameraHandler>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
         weaponSlotManager = GetComponent<WeaponSlotManager>();
         playerManager = GetComponentInParent<PlayerManager>();
         inputHandler = GetComponent<InputHandler>();
         playerInventory = GetComponentInParent<PlayerInventory>();
+        playerStats = GetComponentInParent<PlayerStats>();
+        
     }
 
     public void HandleLightMeleeAttack(WeaponItem weapon)
@@ -49,17 +57,22 @@ public class PlayerAttacker : MonoBehaviour
         }
         if (playerInventory.rightWeapon.isRanged)
         {
-            PerformMagicAction(playerInventory.rightWeapon);
-        }
-
-        //animatorHandler.anim.SetBool("Cast Spell", true);
-    }
-
-    private void PerformMagicAction(WeaponItem weapon)
-    {
-        if (weapon.isRanged)
-        {
+            animatorHandler.PlayTargetAnimation("Cast Spell", true);
             
         }
+
+        
+    }
+
+    private void PerformRangedAction(GameObject projectile)
+    {
+        playerInventory.currnetSpell.AttemptToCastSpell(animatorHandler, playerStats, weaponSlotManager);
+
+    }
+
+    private void SuccessfullyShoot()
+    {
+        playerInventory.currnetSpell.SuccessfullyCastSpell(animatorHandler, playerStats, cameraHandler, weaponSlotManager);
+        animatorHandler.anim.SetBool("isFiring", true);
     }
 }

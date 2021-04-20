@@ -40,7 +40,7 @@ public class PlayerStats : CharacterStats
         return maxStamina;
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage, string damageAnimation = "Take Damage")
     {
 
         if (isDead)
@@ -50,7 +50,7 @@ public class PlayerStats : CharacterStats
 
         healthbar.SetCurrentHealth(currentHealth);
 
-        animatorHandler.PlayTargetAnimation("Take Damage", true);
+        animatorHandler.PlayTargetAnimation(damageAnimation, true);
 
         if(currentHealth <= 0)
         {
