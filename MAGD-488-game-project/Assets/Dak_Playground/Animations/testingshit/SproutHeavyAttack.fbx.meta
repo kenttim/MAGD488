@@ -1,0 +1,584 @@
+fileFormatVersion: 2
+guid: 106b32f0954afc049937963f220d1d56
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      74: 1827226128182048838
+    second: HeavyAttack
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: HeavyAttack
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 198
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftForearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightForearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightArm_Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb1
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb2
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb3
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing1
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing2
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing3
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandIndex1
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandIndex2
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftIHandndex3
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftUpperLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightUpperLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: SproutHeavyAttack(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Master_CTRL_Grp
+      parentName: SproutHeavyAttack(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 7.4681015, y: 7.4681015, z: 7.4681015}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Master_CTRL
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Master_CTRL_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Placer_CTRL_Grp
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Master_CTRL
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.48911554, y: 0.48911554, z: 0.48911554}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Placer_CTRL
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Placer_CTRL_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Skeletons
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Placer_CTRL
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.27376524, y: 0.27376524, z: 0.27376524}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Hips
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Skeletons
+      position: {x: -0.0013846689, y: 0.058635984, z: -0.052841324}
+      rotation: {x: -0.49379364, y: 0.48816642, z: -0.5038764, w: 0.5137801}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Spine
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Hips
+      position: {x: -0.009343796, y: -1.1022053e-18, z: 2.0123818e-19}
+      rotation: {x: -0.00039838703, y: -0.006668707, z: -0.036691118, w: 0.99930435}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Spine1
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Spine
+      position: {x: -0.0074323937, y: -1.6202318e-17, z: 1.9834957e-33}
+      rotation: {x: 0.0037392778, y: 0.014233728, z: 0.022267245, w: 0.99964374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Neck
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Spine1
+      position: {x: -0.010834376, y: 0.0014053633, z: 4.9623024e-20}
+      rotation: {x: -0.0074310205, y: -0.012434235, z: 0.13366829, w: 0.9909203}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Head
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Neck
+      position: {x: -0.008466467, y: 4.160254e-18, z: 1.0616155e-33}
+      rotation: {x: -0.011572696, y: 0.020958278, z: -0.016193096, w: 0.99958223}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_HeadEnd
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Head
+      position: {x: -0.010689719, y: 2.2204459e-17, z: -5.469641e-34}
+      rotation: {x: 0.4870002, y: -0.5126703, z: 0.4870002, w: 0.5126703}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftShoulder
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Spine1
+      position: {x: -0.0066250404, y: 0.0008967111, z: -0.0053362977}
+      rotation: {x: -0.56821424, y: -0.40492702, z: -0.43201122, w: 0.57143074}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftArm
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftShoulder
+      position: {x: -0.0018462519, y: -1.906705e-17, z: 1.0425952e-18}
+      rotation: {x: 0.44523874, y: -0.037120104, z: 0.15162459, w: -0.8816998}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftForearm
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftArm
+      position: {x: -0.016838297, y: 1.89133e-18, z: 1.7450581e-19}
+      rotation: {x: 0.7074539, y: -0.027114294, z: -0.025513, w: 0.70577836}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHand
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftForearm
+      position: {x: -0.014612965, y: 5.707336e-17, z: -2.888311e-18}
+      rotation: {x: -0.70567334, y: 0.05738462, z: -0.044430207, w: 0.7048107}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb1
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHand
+      position: {x: -0.0018651786, y: -0.0001429046, z: -0.0017313452}
+      rotation: {x: 0.5533026, y: -0.45713183, z: -0.010439928, w: 0.6962598}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb2
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb1
+      position: {x: -0.0014634357, y: 6.360182e-18, z: -9.595023e-19}
+      rotation: {x: -0.0000010728835, y: -0.0000033080573, z: -0.022290094, w: 0.9997516}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb3
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb2
+      position: {x: -0.0025689795, y: 5.1147067e-18, z: 6.26415e-19}
+      rotation: {x: 0.0000008245095, y: -0.000002968601, z: -0.022988487, w: 0.9997358}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb4
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandThumb3
+      position: {x: -0.0024387988, y: 5.4398325e-18, z: 2.7755575e-19}
+      rotation: {x: 0.94142747, y: -0.3372157, z: -2.0648504e-17, w: 5.764581e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandIndex1
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHand
+      position: {x: -0.005190298, y: -0.00026318608, z: -0.0012689915}
+      rotation: {x: -0.7508043, y: 0.048020527, z: -0.03205462, w: -0.65799654}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandIndex2
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandIndex1
+      position: {x: -0.002957164, y: -1.0250207e-17, z: -3.416618e-19}
+      rotation: {x: 0.044483867, y: -0, z: -0.0000030547358, w: 0.9990101}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftIHandndex3
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandIndex2
+      position: {x: -0.0027802617, y: 2.1638267e-17, z: 7.7106087e-35}
+      rotation: {x: 0.052474592, y: -0.033741344, z: 0.002609184, w: 0.9980487}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandIndex4
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftIHandndex3
+      position: {x: -0.0020936402, y: -6.162905e-19, z: 1.2807526e-18}
+      rotation: {x: 0.999767, y: 0.021364052, z: 0.0030867064, w: 0.00006589476}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing1
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHand
+      position: {x: -0.005309559, y: -0.00026318608, z: 0.0015292284}
+      rotation: {x: -0.5673193, y: 0.06315998, z: -0.03380347, w: -0.8203761}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing2
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing1
+      position: {x: -0.002957164, y: 1.9185683e-18, z: -7.090773e-18}
+      rotation: {x: -0.0074230423, y: -0.014880834, z: -0.0002624206, w: 0.9998618}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing3
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing2
+      position: {x: -0.0027802617, y: -9.1486895e-18, z: 5.551115e-19}
+      rotation: {x: 0.0057301186, y: -0.01604652, z: 0.00024265473, w: 0.99985486}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing4
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftHandRing3
+      position: {x: -0.0020936402, y: -2.2421614e-17, z: 2.126186e-18}
+      rotation: {x: 0.999767, y: 0.021364052, z: 0.0030867064, w: 0.00006589476}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightShoulder
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Spine1
+      position: {x: -0.0066250595, y: 0.0008967109, z: 0.0053363}
+      rotation: {x: 0.54944474, y: 0.37823173, z: -0.4566781, w: 0.5886395}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightArm
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightShoulder
+      position: {x: -0.0018462347, y: 8.740338e-18, z: 1.90734e-18}
+      rotation: {x: -0.9002215, y: 0.15587477, z: -0.032959573, w: 0.40523818}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightForearm
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightArm
+      position: {x: -0.016838305, y: 1.2490008e-18, z: 7.1470605e-18}
+      rotation: {x: -0.60221213, y: -0.02701191, z: 0.023717856, w: 0.7975264}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightArmEnd
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightForearm
+      position: {x: -0.027762946, y: -2.5745343e-17, z: -1.4378922e-17}
+      rotation: {x: 0.70703995, y: -2.8831315e-10, z: 3.090179e-10, w: 0.7071736}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightArm_Hand
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightArmEnd
+      position: {x: -0.00044105083, y: 0.00010176321, z: 0.000017639593}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftUpperLeg
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Hips
+      position: {x: 0.0039683795, y: -0.00032316727, z: -0.00608289}
+      rotation: {x: 0.101399615, y: -0.0668074, z: 0.9891718, w: 0.082426205}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftLeg
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftUpperLeg
+      position: {x: -0.023311114, y: -5.189666e-19, z: 8.113992e-18}
+      rotation: {x: 0.97873384, y: 0.20037216, z: -0.043940462, w: -0.0006266499}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftFoot
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftLeg
+      position: {x: -0.026585385, y: -2.7832225e-17, z: 6.8690045e-19}
+      rotation: {x: 0.88401014, y: 0.45548087, z: 0.06667878, w: -0.08134674}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftToeBase
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftFoot
+      position: {x: -0.008111653, y: 2.6699632e-19, z: 1.0327652e-18}
+      rotation: {x: 0.0007439492, y: -0.0016270519, z: -0.4158102, w: 0.90944964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftToeEnd
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_LeftToeBase
+      position: {x: -0.005705768, y: -7.263233e-19, z: -1.056126e-19}
+      rotation: {x: 0.000000037576843, y: -0.000000036228656, z: -0.69407445, w: 0.71990323}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightUpperLeg
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_Hips
+      position: {x: 0.0039683348, y: -0.00032316282, z: 0.00608289}
+      rotation: {x: -0.07337358, y: -0.075417735, z: -0.06534728, w: 0.9922995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightLeg
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightUpperLeg
+      position: {x: 0.023311129, y: -0.0000000042134696, z: -0.0000000015224768}
+      rotation: {x: 0.98151076, y: 0.18694669, z: -0.04106266, w: -0.0012270312}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightFoot
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightLeg
+      position: {x: 0.026585413, y: -0.0000000013724751, z: 0.000000002120126}
+      rotation: {x: 0.8860163, y: 0.4577773, z: 0.052197594, w: -0.051870022}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightToeBase
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightFoot
+      position: {x: 0.008111653, y: 0.000000003944828, z: 0.000000005079999}
+      rotation: {x: 0.0007439492, y: -0.0016270519, z: -0.4158102, w: 0.90944964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightToeEnd
+      parentName: LittleSprout_V2_028_FK_IK_spines_deleted:Sprout_BIND_RightToeBase
+      position: {x: 0.0057058004, y: 9.621185e-12, z: 5.960498e-10}
+      rotation: {x: 0.275174, y: 0.2992746, z: -0.6418228, w: 0.6502134}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
