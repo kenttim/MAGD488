@@ -148,6 +148,7 @@ public class InputHandler : MonoBehaviour
 
                     if (playerManager.canDoCombo)
                         return;
+
                     animatorHandler.anim.SetBool("isUsingLeftHand", true);
                     playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
                 }
