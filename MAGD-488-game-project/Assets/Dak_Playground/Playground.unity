@@ -1322,6 +1322,55 @@ MonoBehaviour:
   currentWeapon: {fileID: 0}
   currentWeaponModel: {fileID: 7458835721797126856, guid: 10a753ab5c497d545bd9b11478fdfd01,
     type: 3}
+--- !u!1 &1908590854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908590855}
+  - component: {fileID: 1908590856}
+  m_Layer: 0
+  m_Name: Right Hand Override
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1908590855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908590854}
+  m_LocalRotation: {x: 0.027376182, y: 0.80720013, z: -0.58925676, w: 0.021328323}
+  m_LocalPosition: {x: 0.09214915, y: -0.0048162537, z: 0.00059509336}
+  m_LocalScale: {x: 0.05000001, y: 0.049999997, z: 0.049999997}
+  m_Children: []
+  m_Father: {fileID: 7710870357621514469}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -108.050995, y: 8.081985, z: -7.5219727}
+--- !u!114 &1908590856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908590854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f5ddc8338fdfc458946d594b554b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 1908590855}
+  isLeftHandSlot: 0
+  isRightHandSlot: 1
+  currentWeapon: {fileID: 0}
+  currentWeaponModel: {fileID: 7858839394634696990, guid: 76391d0524212ad41864fde8c33d0921,
+    type: 3}
 --- !u!1 &1913159055
 GameObject:
   m_ObjectHideFlags: 0
@@ -4914,8 +4963,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7710870356491884222, guid: 8811ee2260e7e154dbf4e86c579ba9a1,
+        type: 3}
+      propertyPath: currnetSpell
+      value: 
+      objectReference: {fileID: 11400000, guid: bc46b408b18bdb94a9b6040d923a7fdd,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8811ee2260e7e154dbf4e86c579ba9a1, type: 3}
+--- !u!4 &7710870357621514469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4468262713344274533, guid: 8811ee2260e7e154dbf4e86c579ba9a1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7710870357621514468}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7719059721515469933
 GameObject:
   m_ObjectHideFlags: 0
