@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 3}
   isUnarmed: 0
   L_Attack_1: Light Attack
+  L_Attack_2: Light Attack_2
+  L_Attack_3: Light Attack_3
   H_Attack_1: Heavy Attack
   R_Attack: 
   baseStamina: 10

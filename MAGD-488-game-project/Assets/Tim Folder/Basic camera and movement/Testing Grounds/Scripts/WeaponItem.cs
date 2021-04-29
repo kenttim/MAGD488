@@ -12,6 +12,8 @@ public class WeaponItem : Items
 
     [Header("Melee Attack Animations")]
     public string L_Attack_1;
+    public string L_Attack_2;
+    public string L_Attack_3;
     public string H_Attack_1;
 
     [Header("Range Attack Animations")]

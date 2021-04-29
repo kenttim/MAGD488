@@ -11,17 +11,18 @@ public class PlayerAttacker : MonoBehaviour
     InputHandler inputHandler;
     PlayerInventory playerInventory;
     PlayerStats playerStats;
-    
 
+
+    public string lastAttack;
     public float projectileSpeed = 10f;
 
     private void Awake()
     {
         cameraHandler = FindObjectOfType<CameraHandler>();
-        animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        animatorHandler = GetComponent<AnimatorHandler>();
         weaponSlotManager = GetComponent<WeaponSlotManager>();
         playerManager = GetComponentInParent<PlayerManager>();
-        inputHandler = GetComponent<InputHandler>();
+        inputHandler = GetComponentInParent<InputHandler>();
         playerInventory = GetComponentInParent<PlayerInventory>();
         playerStats = GetComponentInParent<PlayerStats>();
         
@@ -36,6 +37,29 @@ public class PlayerAttacker : MonoBehaviour
 
         weaponSlotManager.attackingWeapon = weapon;
         animatorHandler.PlayTargetAnimation(weapon.L_Attack_1, true);
+        lastAttack = weapon.L_Attack_1;
+    }
+
+    public void HandleWeaponCombo(WeaponItem weapon)
+    {
+
+        if (inputHandler.comboFlag)
+        {
+            
+            if (lastAttack == weapon.L_Attack_1)
+            {
+                animatorHandler.anim.SetBool("canDoCombo", false);
+                animatorHandler.PlayTargetAnimation(weapon.L_Attack_2, true);
+                lastAttack = weapon.L_Attack_2;
+            } else if (lastAttack == weapon.L_Attack_2)
+            {
+                animatorHandler.anim.SetBool("canDoCombo", false);
+                animatorHandler.PlayTargetAnimation(weapon.L_Attack_3, true);
+            }
+
+           
+        }
+        
     }
 
     public void HandleHeavyMeleeAttack(WeaponItem weapon)
@@ -60,8 +84,7 @@ public class PlayerAttacker : MonoBehaviour
             animatorHandler.PlayTargetAnimation("Cast Spell", true);
             
         }
-
-        
+   
     }
 
     private void PerformRangedAction(GameObject projectile)

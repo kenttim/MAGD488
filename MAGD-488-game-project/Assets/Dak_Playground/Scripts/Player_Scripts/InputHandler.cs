@@ -31,6 +31,7 @@ public class InputHandler : MonoBehaviour
 
     public float rollInputTimer; //sprinting stuff
     public bool sprintFlag; //sprinting stuff
+    public bool comboFlag; //combo stuff
 
     public bool right_Arrow_Input;
     public bool left_Arrow_Input;
@@ -41,6 +42,7 @@ public class InputHandler : MonoBehaviour
     CameraHandler cameraHandler;
     PlayerStats playerStats;
     AnimatorHandler animatorHandler;
+    PlayerManager playerManager;
 
     Vector2 movementInput;
     Vector2 cameraInput;
@@ -52,6 +54,7 @@ public class InputHandler : MonoBehaviour
         playerStats = GetComponent<PlayerStats>();
         cameraHandler = FindObjectOfType<CameraHandler>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        playerManager = GetComponent<PlayerManager>();
     }
 
     public void OnEnable()
@@ -131,9 +134,23 @@ public class InputHandler : MonoBehaviour
 
             if (playerStats.currentStamina >= lightAttackStaminaMinimum)
             {
-                animatorHandler.anim.SetBool("isUsingLeftHand", true);
-                playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
-                
+                if (playerManager.canDoCombo)
+                {
+                    animatorHandler.anim.SetBool("isUsingLeftHand", true);
+                    comboFlag = true;
+                    playerAttacker.HandleWeaponCombo(playerInventory.leftWeapon);
+                    comboFlag = false;
+                  
+                } else
+                {
+                    if (playerManager.isInteracting)
+                        return;
+
+                    if (playerManager.canDoCombo)
+                        return;
+                    animatorHandler.anim.SetBool("isUsingLeftHand", true);
+                    playerAttacker.HandleLightMeleeAttack(playerInventory.leftWeapon);
+                }
             }
             else
             {

@@ -82,8 +82,6 @@ public class AnimatorHandler : AnimatorManager
         anim.SetFloat(horizontal, h, 0.1f, Time.deltaTime);
     }
 
-    
-
     public void CanRotate()
     {
         canRotate = true;
@@ -92,6 +90,15 @@ public class AnimatorHandler : AnimatorManager
     public void StopRotation()
     {
         canRotate = false;
+    }
+
+    public void EnableCombo()
+    {
+        anim.SetBool("canDoCombo",true);
+    }
+    public void DisableCombo()
+    {
+        anim.SetBool("canDoCombo", false);
     }
 
     public void OnAnimatorMove()  //dodge stuff

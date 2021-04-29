@@ -411,13 +411,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 734817970}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.8082426, y: -0.011650534, z: 0.01846574, w: 0.58844477}
+  m_LocalPosition: {x: 0.00316, y: 0.00289, z: -0.00044}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children: []
   m_Father: {fileID: 6936765242911233973}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -108.050995, y: 8.081985, z: -7.5219727}
 --- !u!114 &734817972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1086,6 +1086,7 @@ MonoBehaviour:
   isSprinting: 0
   isUsingRightHand: 0
   isUsingLeftHand: 0
+  canDoCombo: 0
 --- !u!114 &1154971226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,6 +1179,7 @@ MonoBehaviour:
   holdClickFlag: 0
   rollInputTimer: 0
   sprintFlag: 0
+  comboFlag: 0
   right_Arrow_Input: 0
   left_Arrow_Input: 0
 --- !u!4 &1154971230
@@ -4655,6 +4657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621a00375a58b21449cfd0f146edfa70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastAttack: 
   projectileSpeed: 10
 --- !u!114 &5261131182771413438
 MonoBehaviour:

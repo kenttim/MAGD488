@@ -85,7 +85,7 @@ public class WeaponSlotManager : MonoBehaviour
     public void CloseDamageCollider()
     {
         leftHandDamageCollider.DisableDamageCollider();
-        rightHandDamageCollider.DisableDamageCollider();
+        //rightHandDamageCollider.DisableDamageCollider();
     }
 
     public void ShootProjectile()
