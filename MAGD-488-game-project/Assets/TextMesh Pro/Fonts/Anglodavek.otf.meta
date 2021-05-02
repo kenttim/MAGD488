@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: c8178e529fcab6a469114c4f877986f0
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Anglodavek
+  fontNames:
+  - Anglodavek
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 83a3c4c5efd55fa44a727a1e58b782c6, type: 3}
+  - {fileID: 12800000, guid: e09746463426d45499f4b3dff108e74b, type: 3}
+  - {fileID: 12800000, guid: 7311a9d90f29154458490c2b2dc2b5c5, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
