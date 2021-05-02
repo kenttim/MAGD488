@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1908590854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1908590855}
+  - component: {fileID: 1908590856}
+  m_Layer: 0
+  m_Name: Right Hand Override
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1908590855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908590854}
+  m_LocalRotation: {x: 0.027376182, y: 0.80720013, z: -0.58925676, w: 0.021328323}
+  m_LocalPosition: {x: 0.09214915, y: -0.0048162537, z: 0.00059509336}
+  m_LocalScale: {x: 0.05000001, y: 0.049999997, z: 0.049999997}
+  m_Children: []
+  m_Father: {fileID: 4468262713344274533}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -108.050995, y: 8.081985, z: -7.5219727}
+--- !u!114 &1908590856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908590854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f5ddc8338fdfc458946d594b554b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 1908590855}
+  isLeftHandSlot: 0
+  isRightHandSlot: 1
+  currentWeapon: {fileID: 0}
+  currentWeaponModel: {fileID: 7858839394634696990, guid: 76391d0524212ad41864fde8c33d0921,
+    type: 3}
 --- !u!1 &21760332428872356
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,7 +353,8 @@ Transform:
   m_LocalRotation: {x: 0.707031, y: -0.0035661142, z: 0.013031233, w: 0.7070535}
   m_LocalPosition: {x: -0.0054016947, y: 3.3827107e-18, z: 1.8248837e-18}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1908590855}
   m_Father: {fileID: 6187894125582792490}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1645,7 +1695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1775597476da0b24e82bf5f6f831163a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currnetSpell: {fileID: 0}
+  currnetSpell: {fileID: 11400000, guid: bc46b408b18bdb94a9b6040d923a7fdd, type: 2}
   leftWeapon: {fileID: 11400000, guid: a46f5a8eb694f214188da549e98311e9, type: 2}
   rightWeapon: {fileID: 11400000, guid: a77bf412fe1c9bd4c849c9e163d95f5f, type: 2}
   weaponsInventory: []
