@@ -27,6 +27,11 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel("Arena1"));
     }
 
+    public void ToTitle()
+    {
+        StartCoroutine(LoadLevel("Title"));
+    }
+
     public void QuitGame()
     {
         Application.Quit();
