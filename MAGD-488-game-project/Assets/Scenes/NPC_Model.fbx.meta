@@ -1,0 +1,308 @@
+fileFormatVersion: 2
+guid: 39a18e3d4813a384f81a7bcacb0c1998
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
+      human bone 'LeftUpperLeg' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: NPC_Model(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: NEW_Master_CTRL_grp
+      parentName: NPC_Model(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Master_CTRL
+      parentName: NEW_Master_CTRL_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Placer_CTRL_grp
+      parentName: Master_CTRL
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.45384356, y: 1, z: 0.45384356}
+    - name: Placer_CTRL
+      parentName: Placer_CTRL_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Geos
+      parentName: Placer_CTRL
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 2.2034023, y: 1, z: 2.2034023}
+    - name: Rocky
+      parentName: Geos
+      position: {x: -0.03433678, y: 0.16512924, z: 0.00685089}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Skeleton
+      parentName: Placer_CTRL
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 2.2034023, y: 1, z: 2.2034023}
+    - name: Rocky_BIND_RootBody
+      parentName: Skeleton
+      position: {x: -0.0006524248, y: 0.12445998, z: 0.00027370822}
+      rotation: {x: 0.40612122, y: -0, z: -0.8499351, w: 0.3356724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_Head
+      parentName: Rocky_BIND_RootBody
+      position: {x: 0.0012533936, y: 0.0114182085, z: 0.030154612}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_TopHead_LittlePart
+      parentName: Rocky_BIND_Head
+      position: {x: -0.015891712, y: 0.03836763, z: -0.0071727787}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_TopHead
+      parentName: Rocky_BIND_TopHead_LittlePart
+      position: {x: 0.01587803, y: 0.008728428, z: -0.0014570617}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftShoulder_Empty
+      parentName: Rocky_BIND_RootBody
+      position: {x: -0.035934415, y: 0.016636848, z: 0.0035143394}
+      rotation: {x: 0.48627695, y: -0.08944163, z: -0.72523063, w: -0.47914043}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftArm
+      parentName: Rocky_BIND_LeftShoulder_Empty
+      position: {x: -0.025915673, y: -0.0082287425, z: -0.00093227683}
+      rotation: {x: -0.6943453, y: -0.2515488, z: 0.03204467, w: 0.6734842}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftForeArm
+      parentName: Rocky_BIND_LeftArm
+      position: {x: -0.075234145, y: -0.0032000467, z: 0.009099312}
+      rotation: {x: 0.29001898, y: 0.06426938, z: -0.004441335, w: 0.9548501}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftArmEnd
+      parentName: Rocky_BIND_LeftForeArm
+      position: {x: -0.11037531, y: 5.00017e-17, z: -2.0893897e-17}
+      rotation: {x: -0.70663553, y: -0.02581228, z: 0.02581228, w: 0.70663553}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_RightShoulder_Empty
+      parentName: Rocky_BIND_RootBody
+      position: {x: 0.03789947, y: 0.01669653, z: -0.0004685786}
+      rotation: {x: -0.6813025, y: 0.5730939, z: -0.036302682, w: -0.45395207}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_RightArm
+      parentName: Rocky_BIND_RightShoulder_Empty
+      position: {x: -0.022315228, y: -0.0043015773, z: 0.0012552432}
+      rotation: {x: 0.89895624, y: -0.051959835, z: -0.1083348, w: -0.42123806}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_RightForeArm
+      parentName: Rocky_BIND_RightArm
+      position: {x: -0.0756837, y: 0.00006374937, z: 0.0001439053}
+      rotation: {x: -0.007727353, y: 0.0010235643, z: -0.0275868, w: 0.9995891}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_RightArmEnd
+      parentName: Rocky_BIND_RightForeArm
+      position: {x: -0.037476715, y: 2.81356e-17, z: 2.4448792e-17}
+      rotation: {x: -0.03327413, y: 0.7063235, z: 0.7063235, w: -0.03327413}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_MidBody
+      parentName: Rocky_BIND_RootBody
+      position: {x: -0.013828028, y: -0.04902702, z: -0.006607394}
+      rotation: {x: -0.0061404044, y: 0.118063614, z: -0.329206, w: 0.936828}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_BottomBody
+      parentName: Rocky_BIND_MidBody
+      position: {x: 0.013995137, y: -0.02033143, z: -0.007720401}
+      rotation: {x: 0, y: 0.050737087, z: -0, w: 0.99871206}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftUpperLeg_Empty
+      parentName: Rocky_BIND_BottomBody
+      position: {x: -0.019599684, y: -0.016437897, z: -4.8849813e-17}
+      rotation: {x: 0.523061, y: 0.47582266, z: -0.523061, w: -0.47582266}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftLeg_Empty
+      parentName: Rocky_BIND_LeftUpperLeg_Empty
+      position: {x: -0.03683772, y: 7.771561e-18, z: -1.6359234e-17}
+      rotation: {x: -3.0967264e-33, y: -2.9687877e-16, z: -0.099083066, w: 0.99507916}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftFoot_Empty
+      parentName: Rocky_BIND_LeftLeg_Empty
+      position: {x: -0.032442015, y: 4.9960034e-18, z: -1.8585296e-17}
+      rotation: {x: -3.3749743e-33, y: 3.3949656e-17, z: 0.40786886, w: 0.9130406}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftToe_Empty
+      parentName: Rocky_BIND_LeftFoot_Empty
+      position: {x: -0.013254795, y: 2.220446e-18, z: -2.283067e-18}
+      rotation: {x: 6.741395e-33, y: 1.1300869e-16, z: 0.40526572, w: 0.91419894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_LeftToeEnd_Empty
+      parentName: Rocky_BIND_LeftToe_Empty
+      position: {x: -0.011049335, y: -5.0269553e-18, z: -4.6599835e-19}
+      rotation: {x: 0.7071068, y: -4.3297806e-17, z: -0.7071068, w: -4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_Right_UpperLeg_Empty
+      parentName: Rocky_BIND_BottomBody
+      position: {x: 0.019599667, y: -0.016437883, z: -0.000000041997144}
+      rotation: {x: 0.47582266, y: -0.523061, z: -0.47582266, w: 0.523061}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_Right_Leg_Empty
+      parentName: Rocky_BIND_Right_UpperLeg_Empty
+      position: {x: 0.036837712, y: 0.00000008179177, z: 8.881784e-18}
+      rotation: {x: 0, y: -1.6012991e-16, z: -0.099083066, w: 0.99507916}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_Right_Foot_Empty
+      parentName: Rocky_BIND_Right_Leg_Empty
+      position: {x: 0.032442056, y: -0.000000050692435, z: 1.3322676e-17}
+      rotation: {x: -1.3499897e-31, y: 9.890441e-16, z: 0.40786886, w: 0.9130406}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_Right_Toe_Empty
+      parentName: Rocky_BIND_Right_Foot_Empty
+      position: {x: 0.013254805, y: 0.000000015942039, z: -1.5543122e-17}
+      rotation: {x: -1.0786232e-31, y: 1.4924879e-15, z: 0.40526572, w: 0.91419894}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BIND_Right_ToeEnd_Empty
+      parentName: Rocky_BIND_Right_Toe_Empty
+      position: {x: 0.01104933, y: 6.774095e-18, z: -3.330669e-17}
+      rotation: {x: 0.7071068, y: -4.3297806e-17, z: -0.7071068, w: -4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Controls_and_IKhandles
+      parentName: Placer_CTRL
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.048934154, y: 0.0024467076, z: -0.9959192, w: 0.07579162}
+      scale: {x: 2.2034023, y: 1, z: 2.2034023}
+    - name: Rocky_RootBody_FK_CTRL_
+      parentName: Controls_and_IKhandles
+      position: {x: -0.0006524248, y: 0.12445998, z: 0.00027370822}
+      rotation: {x: 0.95064956, y: -0.096973054, z: 0.0981776, w: 0.27789}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_Head_FK_CTRL_
+      parentName: Rocky_RootBody_FK_CTRL_
+      position: {x: 0.0012533936, y: 0.0114182085, z: 0.030154612}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_TopHead_LittlePart_FK_CTRL_
+      parentName: Rocky_Head_FK_CTRL_
+      position: {x: -0.015891712, y: 0.03836763, z: -0.0071727787}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_LeftArm_FK_CTRL_
+      parentName: Rocky_RootBody_FK_CTRL_
+      position: {x: -0.053744186, y: 0.037183046, z: 0.0044466164}
+      rotation: {x: 0.6445616, y: 0.2860838, z: 0.4165936, w: 0.57371265}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_LeftForeArm_FK_CTRL_
+      parentName: Rocky_LeftArm_FK_CTRL_
+      position: {x: -0.075234145, y: -0.0032000467, z: 0.009099312}
+      rotation: {x: 0.17567985, y: 0.10444129, z: -0.6598833, w: 0.72303706}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_RightArm_FK_CTRL_
+      parentName: Rocky_RootBody_FK_CTRL_
+      position: {x: 0.058242172, y: 0.026828041, z: -0.0017238219}
+      rotation: {x: 0.42646092, y: 0.48167267, z: 0.63091093, w: 0.4336749}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_Right_ForeArm_FK_CTRL_
+      parentName: Rocky_RightArm_FK_CTRL_
+      position: {x: -0.0756837, y: 0.00006374937, z: 0.0001439053}
+      rotation: {x: -0.0075976676, y: 0.0017378558, z: -0.32361272, w: 0.9461576}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_MidBody_FK_CTRL_
+      parentName: Rocky_RootBody_FK_CTRL_
+      position: {x: -0.013828028, y: -0.04902702, z: -0.006607394}
+      rotation: {x: 0.00069901405, y: -0.002088801, z: -0.00021750784, w: 0.99999756}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Rocky_BottomBody_FK_CTRL_
+      parentName: Rocky_MidBody_FK_CTRL_
+      position: {x: 0.013995137, y: -0.02033143, z: -0.007720401}
+      rotation: {x: -0.0025450941, y: 0.96108115, z: 0.2752255, w: 0.023824943}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: Rocky_BIND_RootBody
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 1
+  humanoidOversampling: 1
+  avatarSetup: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
