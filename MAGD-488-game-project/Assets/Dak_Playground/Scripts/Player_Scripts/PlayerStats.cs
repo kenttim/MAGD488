@@ -7,6 +7,8 @@ public class PlayerStats : CharacterStats
     HealthBar healthbar;
     StaminaBar staminabar;
 
+    LevelLoader levelLoader;
+
     AnimatorHandler animatorHandler;
 
     private void Awake()
@@ -14,6 +16,7 @@ public class PlayerStats : CharacterStats
         healthbar = FindObjectOfType<HealthBar>();
         staminabar = FindObjectOfType<StaminaBar>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        levelLoader = FindObjectOfType<LevelLoader>();
     }
     void Start()
     {
@@ -44,7 +47,10 @@ public class PlayerStats : CharacterStats
     {
 
         if (isDead)
-            return;
+        {
+            levelLoader.DeathScreen();
+        }
+            
 
         currentHealth = currentHealth - damage;
 
@@ -57,6 +63,7 @@ public class PlayerStats : CharacterStats
             currentHealth = 0;
             animatorHandler.PlayTargetAnimation("Death", true);
             isDead = true;
+            
             //handle player death
         }
     }

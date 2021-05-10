@@ -6,9 +6,12 @@ public class Enemy_Stats : CharacterStats
 {
     Animator animator;
 
+    LevelLoader levelLoader;
+
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        levelLoader = FindObjectOfType<LevelLoader>();
     }
     void Start()
     {
@@ -26,7 +29,7 @@ public class Enemy_Stats : CharacterStats
     {
         if (isDead)
         {
-            return;
+            levelLoader.VictoryScreen();
         }
 
         currentHealth = currentHealth - damage;

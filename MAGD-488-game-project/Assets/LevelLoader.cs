@@ -37,6 +37,16 @@ public class LevelLoader : MonoBehaviour
         Application.Quit();
     }
 
+    public void DeathScreen()
+    {
+        StartCoroutine(LoadLevel("Death"));
+    }
+
+    public void VictoryScreen()
+    {
+        StartCoroutine(LoadLevel("Victory"));
+    }
+
     IEnumerator LoadLevel(string LevelName)
     {
         transition.SetTrigger("Start");
