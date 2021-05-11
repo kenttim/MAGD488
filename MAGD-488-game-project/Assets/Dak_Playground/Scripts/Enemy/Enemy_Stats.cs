@@ -6,6 +6,8 @@ public class Enemy_Stats : CharacterStats
 {
     Animator animator;
 
+    public UIEnemyHealthBar enemyHealthBar;
+
     LevelLoader levelLoader;
 
     private void Awake()
@@ -17,6 +19,7 @@ public class Enemy_Stats : CharacterStats
     {
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
+        enemyHealthBar.SetMaxHealth(maxHealth);
     }
 
     private int SetMaxHealthFromHealthLevel()
@@ -33,6 +36,8 @@ public class Enemy_Stats : CharacterStats
         }
 
         currentHealth = currentHealth - damage;
+
+        enemyHealthBar.SetHealth(currentHealth);
 
         animator.Play("Take Damage");
 
