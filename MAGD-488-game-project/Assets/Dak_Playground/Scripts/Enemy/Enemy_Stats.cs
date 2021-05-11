@@ -46,6 +46,8 @@ public class Enemy_Stats : CharacterStats
             currentHealth = 0;
             animator.Play("Death");
             isDead = true;
+            gameObject.SetActive(false);
+            levelLoader.VictoryScreen();
             //handle player death
         }
     }

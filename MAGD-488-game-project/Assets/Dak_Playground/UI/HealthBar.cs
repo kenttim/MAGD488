@@ -7,7 +7,6 @@ public class HealthBar : MonoBehaviour
 {
     public Slider slider;
 
-
     private void Start()
     {
         slider = GetComponent<Slider>();

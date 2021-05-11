@@ -1977,6 +1977,18 @@ Transform:
   m_Father: {fileID: 1230744887}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 5.0620003, y: 0, z: 0}
+--- !u!114 &276986888 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1112213911218704029, guid: 523e5814b16cd584499e92a94596a059,
+    type: 3}
+  m_PrefabInstance: {fileID: 1631104652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592baea2aec4c4743b2cb53b07f0e0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &363685372
 Mesh:
   m_ObjectHideFlags: 0
@@ -2865,6 +2877,16 @@ PrefabInstance:
       propertyPath: itemInteractableGameObject
       value: 
       objectReference: {fileID: 1129166158}
+    - target: {fileID: 7710870356491884223, guid: 8811ee2260e7e154dbf4e86c579ba9a1,
+        type: 3}
+      propertyPath: healthbar
+      value: 
+      objectReference: {fileID: 276986888}
+    - target: {fileID: 7710870356491884223, guid: 8811ee2260e7e154dbf4e86c579ba9a1,
+        type: 3}
+      propertyPath: staminabar
+      value: 
+      objectReference: {fileID: 1655522398}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8811ee2260e7e154dbf4e86c579ba9a1, type: 3}
 --- !u!1001 &1090366806
@@ -3445,6 +3467,18 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f09f9513d498d0d40a953fea3c60afec, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c743829800860f342bd56257b3881c73, type: 3}
+--- !u!114 &1655522398 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 828472215, guid: 523e5814b16cd584499e92a94596a059,
+    type: 3}
+  m_PrefabInstance: {fileID: 1631104652}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7928f6e02c7213041bf6629d6a349973, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1813020123 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8577396086273968019, guid: 523e5814b16cd584499e92a94596a059,

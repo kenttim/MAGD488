@@ -47,13 +47,15 @@ public class Enemy_Manager : CharacterManager
     private void Update()
     {
         HandleRecoveryTimer();
+        HandleStateMachine();
 
         isInteracting = enemyAnimationManager.anim.GetBool("isInteracting");
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
-        HandleStateMachine();
+        navMeshAgent.transform.localPosition = Vector3.zero;
+        navMeshAgent.transform.localRotation = Quaternion.identity;
     }
 
     private void HandleStateMachine()

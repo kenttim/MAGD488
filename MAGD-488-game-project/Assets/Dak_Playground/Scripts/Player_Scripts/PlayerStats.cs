@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerStats : CharacterStats
 {
-    HealthBar healthbar;
-    StaminaBar staminabar;
+    public HealthBar healthbar;
+    public StaminaBar staminabar;
 
     LevelLoader levelLoader;
 
@@ -13,7 +13,7 @@ public class PlayerStats : CharacterStats
 
     private void Awake()
     {
-        healthbar = FindObjectOfType<HealthBar>();
+        //healthbar = FindObjectOfType<HealthBar>();
         staminabar = FindObjectOfType<StaminaBar>();
         animatorHandler = GetComponentInChildren<AnimatorHandler>();
         levelLoader = FindObjectOfType<LevelLoader>();
@@ -63,7 +63,7 @@ public class PlayerStats : CharacterStats
             currentHealth = 0;
             animatorHandler.PlayTargetAnimation("Death", true);
             isDead = true;
-            
+            levelLoader.DeathScreen();
             //handle player death
         }
     }

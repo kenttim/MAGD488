@@ -297,6 +297,8 @@ MonoBehaviour:
   isInteractingStatus: 0
   isFiringBool: isFiring
   isFiringStatus: 0
+  canDoCombo: canDoCombo
+  comboStatus: 0
 --- !u!1107 &-3865206605135320500
 AnimatorStateMachine:
   serializedVersion: 5
@@ -408,7 +410,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Sprout_Modified
+  m_Name: Boss_Controller
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Vertical
@@ -494,6 +496,8 @@ MonoBehaviour:
   isInteractingStatus: 0
   isFiringBool: isFiring
   isFiringStatus: 0
+  canDoCombo: canDoCombo
+  comboStatus: 0
 --- !u!1101 &780789048517539768
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -610,6 +614,8 @@ MonoBehaviour:
   isInteractingStatus: 0
   isFiringBool: isFiring
   isFiringStatus: 0
+  canDoCombo: canDoCombo
+  comboStatus: 0
 --- !u!1102 &2098918592105888482
 AnimatorState:
   serializedVersion: 5
@@ -681,6 +687,8 @@ MonoBehaviour:
   isInteractingStatus: 0
   isFiringBool: isFiring
   isFiringStatus: 0
+  canDoCombo: canDoCombo
+  comboStatus: 0
 --- !u!1102 &3187425284558427557
 AnimatorState:
   serializedVersion: 5
@@ -694,7 +702,7 @@ AnimatorState:
   m_Transitions: []
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
+  m_IKOnFeet: 1
   m_WriteDefaultValues: 1
   m_Mirror: 0
   m_SpeedParameterActive: 0
@@ -819,6 +827,8 @@ MonoBehaviour:
   isInteractingStatus: 0
   isFiringBool: isFiring
   isFiringStatus: 0
+  canDoCombo: canDoCombo
+  comboStatus: 0
 --- !u!1102 &4930128374566956497
 AnimatorState:
   serializedVersion: 5

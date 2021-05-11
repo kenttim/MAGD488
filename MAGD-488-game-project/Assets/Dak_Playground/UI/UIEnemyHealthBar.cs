@@ -16,7 +16,7 @@ public class UIEnemyHealthBar : MonoBehaviour
     public void SetHealth(int health)
     {
         slider.value = health;
-        timeUntilBarIsHidden = 3;
+        timeUntilBarIsHidden = 5;
     }
 
     public void SetMaxHealth(int maxHealth)
